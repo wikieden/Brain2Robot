@@ -1,0 +1,103 @@
+<svg viewBox="0 0 860 580" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,-apple-system,sans-serif">
+  <rect width="860" height="580" fill="#f8f8f8"/>
+  <text x="430" y="30" text-anchor="middle" font-size="15" font-weight="700" fill="#111">多人支持 · 身份识别与权限体系</text>
+  <text x="430" y="46" text-anchor="middle" font-size="10" fill="#888">Layer 1 · 从信号采集到行动授权</text>
+  <text x="24" y="72" font-size="9" font-weight="600" letter-spacing="1" fill="#999">INPUT · 多模态信号</text>
+  <rect x="20" y="80" width="170" height="60" rx="7" fill="#fff" stroke="#6C8EBD" stroke-width="1.4"/>
+  <rect x="20" y="80" width="170" height="8" rx="7" fill="#6C8EBD"/>
+  <text x="105" y="104" text-anchor="middle" font-size="11" font-weight="600" fill="#3a5a8a">人脸识别</text>
+  <text x="105" y="119" text-anchor="middle" font-size="9.5" fill="#666">正脸高精度 · 遮挡时降权</text>
+  <text x="105" y="132" text-anchor="middle" font-size="9" fill="#999">主力信号</text>
+  <rect x="206" y="80" width="170" height="60" rx="7" fill="#fff" stroke="#82b366" stroke-width="1.4"/>
+  <rect x="206" y="80" width="170" height="8" rx="7" fill="#82b366"/>
+  <text x="291" y="104" text-anchor="middle" font-size="11" font-weight="600" fill="#3a6b3a">步态识别</text>
+  <text x="291" y="119" text-anchor="middle" font-size="9.5" fill="#666">背对/远距/侧身时有效</text>
+  <text x="291" y="132" text-anchor="middle" font-size="9" fill="#999">被动采集</text>
+  <rect x="392" y="80" width="170" height="60" rx="7" fill="#fff" stroke="#d6a520" stroke-width="1.4"/>
+  <rect x="392" y="80" width="170" height="8" rx="7" fill="#d6a520"/>
+  <text x="477" y="104" text-anchor="middle" font-size="11" font-weight="600" fill="#7a5a00">声纹识别</text>
+  <text x="477" y="119" text-anchor="middle" font-size="9.5" fill="#666">开口即采集 · 感冒时交叉验</text>
+  <text x="477" y="132" text-anchor="middle" font-size="9" fill="#999">自然采集</text>
+  <rect x="578" y="80" width="262" height="60" rx="7" fill="#fff" stroke="#b85450" stroke-width="1.4"/>
+  <rect x="578" y="80" width="262" height="8" rx="7" fill="#b85450"/>
+  <text x="709" y="104" text-anchor="middle" font-size="11" font-weight="600" fill="#8a2020">时空行为模式</text>
+  <text x="709" y="119" text-anchor="middle" font-size="9.5" fill="#666">惯常位置 · 作息规律 · 物品使用习惯</text>
+  <text x="709" y="132" text-anchor="middle" font-size="9" fill="#999">先验概率，辅助所有信号</text>
+  <line x1="105" y1="140" x2="105" y2="168" stroke="#aaa" stroke-width="1.3" marker-end="url(#b)"/>
+  <line x1="291" y1="140" x2="291" y2="168" stroke="#aaa" stroke-width="1.3" marker-end="url(#b)"/>
+  <line x1="477" y1="140" x2="477" y2="168" stroke="#aaa" stroke-width="1.3" marker-end="url(#b)"/>
+  <line x1="709" y1="140" x2="709" y2="168" stroke="#aaa" stroke-width="1.3" marker-end="url(#b)"/>
+  <line x1="105" y1="168" x2="430" y2="168" stroke="#aaa" stroke-width="1"/>
+  <line x1="291" y1="168" x2="430" y2="168" stroke="#aaa" stroke-width="1"/>
+  <line x1="477" y1="168" x2="430" y2="168" stroke="#aaa" stroke-width="1"/>
+  <line x1="709" y1="168" x2="430" y2="168" stroke="#aaa" stroke-width="1"/>
+  <line x1="430" y1="168" x2="430" y2="178" stroke="#aaa" stroke-width="1.3" marker-end="url(#b)"/>
+  <rect x="220" y="178" width="420" height="52" rx="8" fill="#2d3748"/>
+  <text x="430" y="197" text-anchor="middle" font-size="11" font-weight="700" fill="#e2e8f0">多模态融合引擎</text>
+  <text x="430" y="213" text-anchor="middle" font-size="9.5" fill="#90cdf4">动态权重叠加 · 人脸高置信时主导 · 时空先验作为基础概率</text>
+  <text x="430" y="225" text-anchor="middle" font-size="9" fill="#718096">输出：身份候选 + 置信度分数 [0, 1]</text>
+  <line x1="430" y1="230" x2="430" y2="256" stroke="#aaa" stroke-width="1.3" marker-end="url(#b)"/>
+  <text x="24" y="273" font-size="9" font-weight="600" letter-spacing="1" fill="#999">DECISION · 置信度分支</text>
+  <rect x="20" y="280" width="185" height="64" rx="7" fill="#EEF7EB" stroke="#82b366" stroke-width="1.4"/>
+  <text x="112" y="299" text-anchor="middle" font-size="10" font-weight="700" fill="#3a6b3a">高置信  &gt; 0.85</text>
+  <text x="112" y="314" text-anchor="middle" font-size="9.5" fill="#444">直接确认身份</text>
+  <text x="112" y="328" text-anchor="middle" font-size="9.5" fill="#444">立即进入权限判断</text>
+  <text x="112" y="340" text-anchor="middle" font-size="9" fill="#888">继续采集更新档案</text>
+  <rect x="225" y="280" width="185" height="64" rx="7" fill="#FEF9E7" stroke="#d6a520" stroke-width="1.4"/>
+  <text x="317" y="299" text-anchor="middle" font-size="10" font-weight="700" fill="#7a5a00">中置信  0.6–0.85</text>
+  <text x="317" y="314" text-anchor="middle" font-size="9.5" fill="#444">带标记执行</text>
+  <text x="317" y="328" text-anchor="middle" font-size="9.5" fill="#444">持续采集等待收敛</text>
+  <text x="317" y="340" text-anchor="middle" font-size="9" fill="#888">低风险行动可先行</text>
+  <rect x="430" y="280" width="185" height="64" rx="7" fill="#FEF3EB" stroke="#d6791a" stroke-width="1.4"/>
+  <text x="522" y="299" text-anchor="middle" font-size="10" font-weight="700" fill="#a04a00">低置信  &lt; 0.6</text>
+  <text x="522" y="314" text-anchor="middle" font-size="9.5" fill="#444">主动自然确认</text>
+  <text x="522" y="328" text-anchor="middle" font-size="9.5" fill="#444">"和平时一样喝热茶吗？"</text>
+  <text x="522" y="340" text-anchor="middle" font-size="9" fill="#888">用个性化问题间接确认</text>
+  <rect x="635" y="280" width="205" height="64" rx="7" fill="#FDECEA" stroke="#b85450" stroke-width="1.4"/>
+  <text x="737" y="299" text-anchor="middle" font-size="10" font-weight="700" fill="#8a2020">未知 · 保守模式</text>
+  <text x="737" y="314" text-anchor="middle" font-size="9.5" fill="#444">不主动 · 不采集偏好</text>
+  <text x="737" y="328" text-anchor="middle" font-size="9.5" fill="#444">响应显式呼叫</text>
+  <text x="737" y="340" text-anchor="middle" font-size="9" fill="#888">服务需家庭成员授权</text>
+  <line x1="112" y1="344" x2="112" y2="370" stroke="#aaa" stroke-width="1.2" marker-end="url(#b)"/>
+  <line x1="317" y1="344" x2="317" y2="370" stroke="#aaa" stroke-width="1.2" marker-end="url(#b)"/>
+  <line x1="522" y1="344" x2="522" y2="370" stroke="#aaa" stroke-width="1.2" marker-end="url(#b)"/>
+  <line x1="737" y1="344" x2="737" y2="370" stroke="#aaa" stroke-width="1.2" marker-end="url(#b)"/>
+  <text x="24" y="387" font-size="9" font-weight="600" letter-spacing="1" fill="#999">OUTPUT · 权限层级</text>
+  <rect x="20" y="394" width="185" height="80" rx="7" fill="#fff" stroke="#6C8EBD" stroke-width="1.8"/>
+  <rect x="20" y="394" width="185" height="5" rx="7" fill="#6C8EBD"/>
+  <text x="112" y="416" text-anchor="middle" font-size="11" font-weight="700" fill="#3a5a8a">家长</text>
+  <text x="112" y="431" text-anchor="middle" font-size="9.5" fill="#444">完整权限 + 覆盖权</text>
+  <text x="112" y="445" text-anchor="middle" font-size="9" fill="#666">授权新成员 · 中止任何任务</text>
+  <text x="112" y="458" text-anchor="middle" font-size="9" fill="#666">制定家庭层规则</text>
+  <text x="112" y="471" text-anchor="middle" font-size="9" fill="#999">覆盖所有层级</text>
+  <rect x="225" y="394" width="185" height="80" rx="7" fill="#fff" stroke="#82b366" stroke-width="1.8"/>
+  <rect x="225" y="394" width="185" height="5" rx="7" fill="#82b366"/>
+  <text x="317" y="416" text-anchor="middle" font-size="11" font-weight="700" fill="#3a6b3a">孩子</text>
+  <text x="317" y="431" text-anchor="middle" font-size="9.5" fill="#444">执行权，无覆盖权</text>
+  <text x="317" y="445" text-anchor="middle" font-size="9" fill="#666">可授权访客基础服务</text>
+  <text x="317" y="458" text-anchor="middle" font-size="9" fill="#666">指令执行后广播通知家长</text>
+  <text x="317" y="471" text-anchor="middle" font-size="9" fill="#999">家长可打断或拒绝</text>
+  <rect x="430" y="394" width="185" height="80" rx="7" fill="#fff" stroke="#d6a520" stroke-width="1.8"/>
+  <rect x="430" y="394" width="185" height="5" rx="7" fill="#d6a520"/>
+  <text x="522" y="416" text-anchor="middle" font-size="11" font-weight="700" fill="#7a5a00">已授权访客</text>
+  <text x="522" y="431" text-anchor="middle" font-size="9.5" fill="#444">基础服务权</text>
+  <text x="522" y="445" text-anchor="middle" font-size="9" fill="#666">仅对自身发起服务请求</text>
+  <text x="522" y="458" text-anchor="middle" font-size="9" fill="#666">不涉及家庭资源调配</text>
+  <text x="522" y="471" text-anchor="middle" font-size="9" fill="#999">授权来自家庭成员</text>
+  <rect x="635" y="394" width="205" height="80" rx="7" fill="#fff" stroke="#b85450" stroke-width="1.8"/>
+  <rect x="635" y="394" width="205" height="5" rx="7" fill="#b85450"/>
+  <text x="737" y="416" text-anchor="middle" font-size="11" font-weight="700" fill="#8a2020">陌生人</text>
+  <text x="737" y="431" text-anchor="middle" font-size="9.5" fill="#444">保守模式</text>
+  <text x="737" y="445" text-anchor="middle" font-size="9" fill="#666">不采集数据 · 不主动触发</text>
+  <text x="737" y="458" text-anchor="middle" font-size="9" fill="#666">响应显式呼叫后需授权</text>
+  <text x="737" y="471" text-anchor="middle" font-size="9" fill="#999">升级需家长显式声明</text>
+  <rect x="20" y="488" width="820" height="36" rx="6" fill="#F0F4FF" stroke="#6C8EBD" stroke-width="1"/>
+  <text x="430" y="503" text-anchor="middle" font-size="10" font-weight="600" fill="#3a5a8a">物体归属：从行为历史推断 · 时间交互频率建立"物体-人"软归属关系 · 概率分布而非硬绑定</text>
+  <text x="430" y="519" text-anchor="middle" font-size="9.5" fill="#555">触发行动前先查归属：杯子是谁的 → 找谁的偏好档案 → 判断是否主动服务</text>
+  <text x="430" y="558" text-anchor="middle" font-size="9" fill="#aaa">Brain2Robot · 多人身份与权限架构 v1.0 · 2026.04</text>
+  <defs>
+    <marker id="b" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#aaa"/>
+    </marker>
+  </defs>
+</svg>

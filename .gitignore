@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Cowork/Claude internal
+.omc/
+
+# Early code drafts (not part of design doc project)
+l3_cognition/
+
+# Editor artifacts
+.vscode/
+*.swp
+*~

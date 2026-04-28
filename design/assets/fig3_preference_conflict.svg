@@ -1,0 +1,92 @@
+<svg viewBox="0 0 860 560" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,-apple-system,sans-serif">
+  <rect width="860" height="560" fill="#f8f8f8"/>
+  <text x="430" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#111">偏好模型 · 三层架构 与 冲突解决流程</text>
+  <text x="430" y="44" text-anchor="middle" font-size="10" fill="#888">Layer 2 · Layer 3</text>
+  <!-- LEFT: PREFERENCE MODEL -->
+  <text x="24" y="64" font-size="9" font-weight="600" letter-spacing="1" fill="#999">PREFERENCE MODEL · 三层偏好架构</text>
+  <rect x="20" y="72" width="400" height="72" rx="8" fill="#fff" stroke="#b85450" stroke-width="1.8"/>
+  <rect x="20" y="72" width="400" height="8" rx="8" fill="#b85450"/>
+  <text x="54" y="93" font-size="11" font-weight="700" fill="#8a2020">家庭层  ·  最高优先级</text>
+  <text x="54" y="108" font-size="9.5" fill="#555">全家共享规范 · 必须显式声明，不可推断</text>
+  <text x="54" y="122" font-size="9" fill="#777">深夜不发噪音 · 访客时保持距离 · 孩子零食柜不代开</text>
+  <text x="54" y="136" font-size="9" fill="#999">任何成员的个人偏好都不能覆盖此层</text>
+  <rect x="20" y="158" width="400" height="84" rx="8" fill="#fff" stroke="#d6a520" stroke-width="1.8"/>
+  <rect x="20" y="158" width="400" height="8" rx="8" fill="#d6a520"/>
+  <text x="54" y="179" font-size="11" font-weight="700" fill="#7a5a00">关系层  ·  服务对象决定行为</text>
+  <text x="54" y="194" font-size="9.5" fill="#555">同一服务，对象不同 → 策略不同 · 显式声明</text>
+  <text x="54" y="208" font-size="9" fill="#777">爸爸杯空 → 直接倒水</text>
+  <text x="54" y="221" font-size="9" fill="#777">孩子杯空 → 先查家长规则（锻炼自理？代劳？）</text>
+  <text x="54" y="234" font-size="9" fill="#777">访客需求 → 确认归属成员后执行</text>
+  <rect x="20" y="256" width="400" height="100" rx="8" fill="#fff" stroke="#6C8EBD" stroke-width="1.8"/>
+  <rect x="20" y="256" width="400" height="8" rx="8" fill="#6C8EBD"/>
+  <text x="54" y="277" font-size="11" font-weight="700" fill="#3a5a8a">个人层  ·  情境驱动三元组</text>
+  <text x="54" y="292" font-size="9.5" fill="#555">核心单元：{ 情境 → 行为 → 期望反应 }</text>
+  <text x="54" y="306" font-size="9" fill="#777">示例：工作+高专注 → 主动倒水 → 接受，但不说话放下就走</text>
+  <text x="54" y="320" font-size="9" fill="#777">每人独立档案 · 情境越丰富判断越准</text>
+  <text x="54" y="334" font-size="9" fill="#999">时间衰减权重（非删除）· 显式声明立即生效</text>
+  <text x="54" y="348" font-size="9" fill="#999">RAG检索注入L3 · 每次约10–15条记忆</text>
+  <rect x="20" y="370" width="400" height="60" rx="7" fill="#F0F4FF" stroke="#6C8EBD" stroke-width="1"/>
+  <text x="30" y="388" font-size="10" font-weight="600" fill="#3a5a8a">长期记忆存储</text>
+  <text x="30" y="404" font-size="9.5" fill="#555">情节层（只增不删）：原始交互日志，事实永久保留</text>
+  <text x="30" y="418" font-size="9.5" fill="#555">语义层（动态更新）：提炼的偏好模型，时间衰减权重</text>
+  <rect x="20" y="444" width="400" height="48" rx="7" fill="#EEF7EB" stroke="#82b366" stroke-width="1"/>
+  <text x="30" y="462" font-size="10" font-weight="600" fill="#3a6b3a">冷启动：2–3个关键问题 + 相似成员迁移权重</text>
+  <text x="30" y="477" font-size="9.5" fill="#555">本地优先存储 · 隐私不上云 · 用户可查看/删除记录</text>
+  <!-- RIGHT: CONFLICT RESOLUTION -->
+  <text x="450" y="64" font-size="9" font-weight="600" letter-spacing="1" fill="#999">CONFLICT RESOLUTION · 冲突解决流程</text>
+  <rect x="580" y="72" width="160" height="44" rx="8" fill="#2d3748"/>
+  <text x="660" y="90" text-anchor="middle" font-size="10" font-weight="700" fill="#e2e8f0">检测到冲突</text>
+  <text x="660" y="106" text-anchor="middle" font-size="9" fill="#90cdf4">两方意图或需求不兼容</text>
+  <line x1="660" y1="116" x2="660" y2="135" stroke="#aaa" stroke-width="1.3" marker-end="url(#c)"/>
+  <polygon points="660,135 730,165 660,195 590,165" fill="#4a5568"/>
+  <text x="660" y="162" text-anchor="middle" font-size="10" font-weight="600" fill="#e2e8f0">冲突类型</text>
+  <text x="660" y="177" text-anchor="middle" font-size="9" fill="#90cdf4">判断分支</text>
+  <line x1="590" y1="165" x2="465" y2="165" stroke="#aaa" stroke-width="1.2" marker-end="url(#c)"/>
+  <text x="527" y="158" text-anchor="middle" font-size="9" fill="#aaa">指令冲突</text>
+  <line x1="730" y1="165" x2="835" y2="165" stroke="#aaa" stroke-width="1.2" marker-end="url(#c)"/>
+  <text x="782" y="158" text-anchor="middle" font-size="9" fill="#aaa">资源冲突</text>
+  <line x1="660" y1="195" x2="660" y2="218" stroke="#aaa" stroke-width="1.2" marker-end="url(#c)"/>
+  <text x="668" y="212" font-size="9" fill="#aaa">偏好冲突</text>
+  <rect x="450" y="182" width="150" height="120" rx="7" fill="#fff" stroke="#6C8EBD" stroke-width="1.4"/>
+  <rect x="450" y="182" width="150" height="5" rx="7" fill="#6C8EBD"/>
+  <text x="525" y="202" text-anchor="middle" font-size="10" font-weight="700" fill="#3a5a8a">指令冲突</text>
+  <text x="525" y="218" text-anchor="middle" font-size="9" fill="#444">暂停 · 透明化</text>
+  <text x="525" y="232" text-anchor="middle" font-size="9" fill="#444">"我收到两个任务"</text>
+  <text x="525" y="246" text-anchor="middle" font-size="9" fill="#444">分别确认双方</text>
+  <text x="525" y="262" text-anchor="middle" font-size="9" fill="#666">都不在场：权限优先+通知</text>
+  <text x="525" y="292" text-anchor="middle" font-size="9" fill="#999">不自行裁决</text>
+  <rect x="700" y="182" width="150" height="120" rx="7" fill="#fff" stroke="#82b366" stroke-width="1.4"/>
+  <rect x="700" y="182" width="150" height="5" rx="7" fill="#82b366"/>
+  <text x="775" y="202" text-anchor="middle" font-size="10" font-weight="700" fill="#3a6b3a">资源冲突</text>
+  <text x="775" y="218" text-anchor="middle" font-size="9" fill="#444">排队 + 透明</text>
+  <text x="775" y="234" text-anchor="middle" font-size="9" fill="#444">"5分钟后来找你"</text>
+  <text x="775" y="250" text-anchor="middle" font-size="9" fill="#555">安全 &gt; 显式呼叫</text>
+  <text x="775" y="264" text-anchor="middle" font-size="9" fill="#666">&gt; 主动触发</text>
+  <text x="775" y="292" text-anchor="middle" font-size="9" fill="#999">家庭层可覆盖</text>
+  <rect x="580" y="222" width="160" height="120" rx="7" fill="#fff" stroke="#d6a520" stroke-width="1.4"/>
+  <rect x="580" y="222" width="160" height="5" rx="7" fill="#d6a520"/>
+  <text x="660" y="242" text-anchor="middle" font-size="10" font-weight="700" fill="#7a5a00">偏好冲突</text>
+  <text x="660" y="258" text-anchor="middle" font-size="9" fill="#444">取保守交集</text>
+  <text x="660" y="272" text-anchor="middle" font-size="9" fill="#444">两方允许的行为∩</text>
+  <text x="660" y="286" text-anchor="middle" font-size="9" fill="#555">交集为空 →</text>
+  <text x="660" y="300" text-anchor="middle" font-size="9" fill="#555">不主动触发</text>
+  <text x="660" y="314" text-anchor="middle" font-size="9" fill="#555">等待显式指令</text>
+  <text x="660" y="328" text-anchor="middle" font-size="9" fill="#999">宁可少做不做错</text>
+  <line x1="525" y1="302" x2="525" y2="340" stroke="#aaa" stroke-width="1.1"/>
+  <line x1="660" y1="342" x2="660" y2="364" stroke="#aaa" stroke-width="1.1" marker-end="url(#c)"/>
+  <line x1="775" y1="302" x2="775" y2="340" stroke="#aaa" stroke-width="1.1"/>
+  <line x1="525" y1="340" x2="775" y2="340" stroke="#aaa" stroke-width="1.1"/>
+  <rect x="450" y="364" width="400" height="64" rx="7" fill="#2d3748"/>
+  <text x="650" y="384" text-anchor="middle" font-size="10" font-weight="700" fill="#e2e8f0">反复冲突 → 上升为家庭层规则</text>
+  <text x="650" y="400" text-anchor="middle" font-size="9.5" fill="#90cdf4">识别模式 · 在平静时机提出统一规则建议</text>
+  <text x="650" y="416" text-anchor="middle" font-size="9" fill="#718096">临时冲突 → 系统学习 → 家庭层固化 → 根本解决</text>
+  <rect x="450" y="444" width="400" height="48" rx="7" fill="#EBF3FB" stroke="#6C8EBD" stroke-width="1"/>
+  <text x="650" y="462" text-anchor="middle" font-size="10" font-weight="600" fill="#3a5a8a">读空气 · 主动触发节流（LLM判断）</text>
+  <text x="650" y="477" text-anchor="middle" font-size="9.5" fill="#555">短期few-shot（近期10–20条）+ 长期LoRA微调 · 两层叠加</text>
+  <text x="430" y="530" text-anchor="middle" font-size="9" fill="#aaa">Brain2Robot · 偏好模型与冲突解决 v1.0 · 2026.04</text>
+  <defs>
+    <marker id="c" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#aaa"/>
+    </marker>
+  </defs>
+</svg>

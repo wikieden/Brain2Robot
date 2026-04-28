@@ -1,0 +1,118 @@
+<svg viewBox="0 0 860 720" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="860" height="720" fill="#f8f8f8" rx="0"/>
+  <text x="430" y="36" text-anchor="middle" font-size="17" font-weight="700" fill="#111">Brain2Robot · 人类技能蒸馏架构</text>
+  <text x="430" y="54" text-anchor="middle" font-size="11" fill="#666">Distill Human → Robot: 感知 · 认知 · 规划 · 执行</text>
+  <text x="24" y="88" font-size="10" font-weight="600" fill="#888" letter-spacing="1">INPUT  ·  人类技能采集</text>
+  <rect x="20" y="96" width="180" height="62" rx="8" fill="#fff" stroke="#d0d0d0" stroke-width="1.2"/>
+  <rect x="20" y="96" width="180" height="9" rx="8" fill="#6C8EBD"/>
+  <text x="110" y="118" text-anchor="middle" font-size="12" font-weight="600" fill="#3a5a8a">日常操作演示</text>
+  <text x="110" y="133" text-anchor="middle" font-size="10" fill="#666">视频 · 动作捕捉 · 力感</text>
+  <text x="110" y="148" text-anchor="middle" font-size="10" fill="#666">50–150 次示教/技能</text>
+  <rect x="216" y="96" width="180" height="62" rx="8" fill="#fff" stroke="#d0d0d0" stroke-width="1.2"/>
+  <rect x="216" y="96" width="180" height="9" rx="8" fill="#82b366"/>
+  <text x="306" y="118" text-anchor="middle" font-size="12" font-weight="600" fill="#3a6b3a">主动规划行为</text>
+  <text x="306" y="133" text-anchor="middle" font-size="10" fill="#666">眼动 · 思维发声 · 决策日志</text>
+  <text x="306" y="148" text-anchor="middle" font-size="10" fill="#666">情境触发条件标注</text>
+  <rect x="412" y="96" width="180" height="62" rx="8" fill="#fff" stroke="#d0d0d0" stroke-width="1.2"/>
+  <rect x="412" y="96" width="180" height="9" rx="8" fill="#d6a520"/>
+  <text x="502" y="118" text-anchor="middle" font-size="12" font-weight="600" fill="#7a5a00">社交与交互模式</text>
+  <text x="502" y="133" text-anchor="middle" font-size="10" fill="#666">语音 · 表情 · 意图标注</text>
+  <text x="502" y="148" text-anchor="middle" font-size="10" fill="#666">对话历史 · 情境记忆</text>
+  <rect x="608" y="96" width="232" height="62" rx="8" fill="#fff" stroke="#d0d0d0" stroke-width="1.2"/>
+  <rect x="608" y="96" width="232" height="9" rx="8" fill="#b85450"/>
+  <text x="724" y="118" text-anchor="middle" font-size="12" font-weight="600" fill="#8a2020">职业技能库</text>
+  <text x="724" y="133" text-anchor="middle" font-size="10" fill="#666">护理 · 烹饪 · 仓储 · 专业SOP</text>
+  <text x="724" y="148" text-anchor="middle" font-size="10" fill="#666">知识图谱 + 操作流程图</text>
+  <line x1="110" y1="158" x2="110" y2="186" stroke="#bbb" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="306" y1="158" x2="306" y2="186" stroke="#bbb" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="502" y1="158" x2="502" y2="186" stroke="#bbb" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="724" y1="158" x2="724" y2="186" stroke="#bbb" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="20" y="186" width="820" height="52" rx="8" fill="#2d3748"/>
+  <text x="430" y="206" text-anchor="middle" font-size="11" font-weight="700" fill="#e2e8f0" letter-spacing="0.5">人类技能蒸馏管道</text>
+  <text x="115" y="224" text-anchor="middle" font-size="10" fill="#90cdf4">多模态采集</text>
+  <text x="115" y="234" text-anchor="middle" font-size="9" fill="#718096">Video+MoCap+EMG</text>
+  <line x1="190" y1="212" x2="235" y2="212" stroke="#4a5568" stroke-width="1"/>
+  <text x="305" y="224" text-anchor="middle" font-size="10" fill="#90cdf4">行为标注 &amp; 分段</text>
+  <text x="305" y="234" text-anchor="middle" font-size="9" fill="#718096">SubTask序列自动化标注</text>
+  <line x1="390" y1="212" x2="435" y2="212" stroke="#4a5568" stroke-width="1"/>
+  <text x="502" y="224" text-anchor="middle" font-size="10" fill="#90cdf4">VLA LoRA微调</text>
+  <text x="502" y="234" text-anchor="middle" font-size="9" fill="#718096">RDT-1B / π0.6 / GR00T N1.7</text>
+  <line x1="580" y1="212" x2="625" y2="212" stroke="#4a5568" stroke-width="1"/>
+  <text x="725" y="224" text-anchor="middle" font-size="10" fill="#90cdf4">技能库注册 &amp; 验证</text>
+  <text x="725" y="234" text-anchor="middle" font-size="9" fill="#718096">成功率 &gt;90% 方可上线</text>
+  <line x1="430" y1="238" x2="430" y2="265" stroke="#bbb" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="24" y="284" font-size="10" font-weight="600" fill="#888" letter-spacing="1">ROBOT BRAIN  ·  三层认知架构</text>
+  <rect x="20" y="292" width="820" height="96" rx="8" fill="#fff" stroke="#6C8EBD" stroke-width="1.8"/>
+  <rect x="20" y="292" width="4" height="96" rx="2" fill="#6C8EBD"/>
+  <text x="42" y="312" font-size="11" font-weight="700" fill="#3a5a8a">L3 认知层  ~1 Hz</text>
+  <text x="42" y="326" font-size="10" fill="#666">Qwen3-7B INT4（离线）/ π0.6 内置规划器 · KV-cache系统提示词 · ~700ms延迟目标</text>
+  <rect x="42" y="334" width="148" height="44" rx="5" fill="#EBF3FB" stroke="#6C8EBD" stroke-width="1"/>
+  <text x="116" y="352" text-anchor="middle" font-size="10" font-weight="600" fill="#3a5a8a">主动任务触发器</text>
+  <text x="116" y="367" text-anchor="middle" font-size="9" fill="#555">环境监测 → 自发任务发起</text>
+  <rect x="202" y="334" width="148" height="44" rx="5" fill="#EBF3FB" stroke="#6C8EBD" stroke-width="1"/>
+  <text x="276" y="352" text-anchor="middle" font-size="10" font-weight="600" fill="#3a5a8a">SubTask[] 规划器</text>
+  <text x="276" y="367" text-anchor="middle" font-size="9" fill="#555">type·target·precond·effects</text>
+  <rect x="362" y="334" width="148" height="44" rx="5" fill="#EBF3FB" stroke="#6C8EBD" stroke-width="1"/>
+  <text x="436" y="352" text-anchor="middle" font-size="10" font-weight="600" fill="#3a5a8a">社交意图理解</text>
+  <text x="436" y="367" text-anchor="middle" font-size="9" fill="#555">语音+表情+上下文融合</text>
+  <rect x="522" y="334" width="148" height="44" rx="5" fill="#EBF3FB" stroke="#6C8EBD" stroke-width="1"/>
+  <text x="596" y="352" text-anchor="middle" font-size="10" font-weight="600" fill="#3a5a8a">失败驱动重规划</text>
+  <text x="596" y="367" text-anchor="middle" font-size="9" fill="#555">错误注入L3 → 生成修正任务</text>
+  <rect x="682" y="334" width="148" height="44" rx="5" fill="#EBF3FB" stroke="#6C8EBD" stroke-width="1"/>
+  <text x="756" y="352" text-anchor="middle" font-size="10" font-weight="600" fill="#3a5a8a">场景记忆系统</text>
+  <text x="756" y="367" text-anchor="middle" font-size="9" fill="#555">ConceptGraphs + OpenScene</text>
+  <line x1="430" y1="388" x2="430" y2="412" stroke="#bbb" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="20" y="412" width="820" height="96" rx="8" fill="#fff" stroke="#82b366" stroke-width="1.8"/>
+  <rect x="20" y="412" width="4" height="96" rx="2" fill="#82b366"/>
+  <text x="42" y="432" font-size="11" font-weight="700" fill="#3a6b3a">L2 协调层  ~5 Hz</text>
+  <text x="42" y="446" font-size="10" fill="#666">BehaviorTree.CPP 任务调度 · 前置条件校验 · 安全栅栏 · 符号世界模型更新</text>
+  <rect x="42" y="454" width="148" height="44" rx="5" fill="#EEF7EB" stroke="#82b366" stroke-width="1"/>
+  <text x="116" y="472" text-anchor="middle" font-size="10" font-weight="600" fill="#3a6b3a">VLN 导航</text>
+  <text x="116" y="487" text-anchor="middle" font-size="9" fill="#555">输出路径点 (x,y,θ) 非动作词</text>
+  <rect x="202" y="454" width="148" height="44" rx="5" fill="#EEF7EB" stroke="#82b366" stroke-width="1"/>
+  <text x="276" y="472" text-anchor="middle" font-size="10" font-weight="600" fill="#3a6b3a">技能执行器</text>
+  <text x="276" y="487" text-anchor="middle" font-size="9" fill="#555">LoRA微调VLA策略库调用</text>
+  <rect x="362" y="454" width="148" height="44" rx="5" fill="#EEF7EB" stroke="#82b366" stroke-width="1"/>
+  <text x="436" y="472" text-anchor="middle" font-size="10" font-weight="600" fill="#3a6b3a">抓取子系统</text>
+  <text x="436" y="487" text-anchor="middle" font-size="9" fill="#555">AnyGrasp + Diffusion Policy</text>
+  <rect x="522" y="454" width="148" height="44" rx="5" fill="#EEF7EB" stroke="#82b366" stroke-width="1"/>
+  <text x="596" y="472" text-anchor="middle" font-size="10" font-weight="600" fill="#3a6b3a">社交响应执行</text>
+  <text x="596" y="487" text-anchor="middle" font-size="9" fill="#555">语音合成 + 面部表情 + 姿态</text>
+  <rect x="682" y="454" width="148" height="44" rx="5" fill="#EEF7EB" stroke="#82b366" stroke-width="1"/>
+  <text x="756" y="472" text-anchor="middle" font-size="10" font-weight="600" fill="#3a6b3a">安全监控</text>
+  <text x="756" y="487" text-anchor="middle" font-size="9" fill="#555">碰撞检测 · 人员保护停机</text>
+  <line x1="430" y1="508" x2="430" y2="532" stroke="#bbb" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="20" y="532" width="820" height="66" rx="8" fill="#fff" stroke="#b85450" stroke-width="1.8"/>
+  <rect x="20" y="532" width="4" height="66" rx="2" fill="#b85450"/>
+  <text x="42" y="552" font-size="11" font-weight="700" fill="#8a2020">L1 执行层  ~50 Hz</text>
+  <text x="42" y="566" font-size="10" fill="#666">全身控制 TSID/Pinocchio · MPC轨迹优化 · EtherCAT实时驱动 · PREEMPT_RT内核</text>
+  <rect x="42" y="572" width="228" height="20" rx="4" fill="#FDECEA" stroke="#b85450" stroke-width="0.8"/>
+  <text x="156" y="586" text-anchor="middle" font-size="9.5" fill="#8a2020">关节力矩输出  1 kHz</text>
+  <rect x="286" y="572" width="228" height="20" rx="4" fill="#FDECEA" stroke="#b85450" stroke-width="0.8"/>
+  <text x="400" y="586" text-anchor="middle" font-size="9.5" fill="#8a2020">力/触觉反馈闭环</text>
+  <rect x="530" y="572" width="300" height="20" rx="4" fill="#FDECEA" stroke="#b85450" stroke-width="0.8"/>
+  <text x="680" y="586" text-anchor="middle" font-size="9.5" fill="#8a2020">ODrive Pro / VESC 6  ·  Jetson Thor 275 TOPS</text>
+  <line x1="430" y1="598" x2="430" y2="618" stroke="#bbb" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="24" y="638" font-size="10" font-weight="600" fill="#888" letter-spacing="1">OUTPUT  ·  四大能力域</text>
+  <rect x="20" y="645" width="192" height="58" rx="8" fill="#EBF3FB" stroke="#6C8EBD" stroke-width="1.2"/>
+  <text x="116" y="664" text-anchor="middle" font-size="11" font-weight="700" fill="#3a5a8a">日常生活技能</text>
+  <text x="116" y="679" text-anchor="middle" font-size="9.5" fill="#555">做饭 · 清扫 · 叠衣 · 取物</text>
+  <text x="116" y="693" text-anchor="middle" font-size="9" fill="#888">Diffusion Policy LoRA</text>
+  <rect x="224" y="645" width="192" height="58" rx="8" fill="#EEF7EB" stroke="#82b366" stroke-width="1.2"/>
+  <text x="320" y="664" text-anchor="middle" font-size="11" font-weight="700" fill="#3a6b3a">主动规划决策</text>
+  <text x="320" y="679" text-anchor="middle" font-size="9.5" fill="#555">监测→判断→自发任务</text>
+  <text x="320" y="693" text-anchor="middle" font-size="9" fill="#888">World Model + Trigger</text>
+  <rect x="428" y="645" width="192" height="58" rx="8" fill="#FEF9E7" stroke="#d6a520" stroke-width="1.2"/>
+  <text x="524" y="664" text-anchor="middle" font-size="11" font-weight="700" fill="#7a5a00">社交与交互</text>
+  <text x="524" y="679" text-anchor="middle" font-size="9.5" fill="#555">理解意图 · 主动沟通</text>
+  <text x="524" y="693" text-anchor="middle" font-size="9" fill="#888">Multimodal LLM + TTS</text>
+  <rect x="632" y="645" width="208" height="58" rx="8" fill="#FDECEA" stroke="#b85450" stroke-width="1.2"/>
+  <text x="736" y="664" text-anchor="middle" font-size="11" font-weight="700" fill="#8a2020">职业技能库</text>
+  <text x="736" y="679" text-anchor="middle" font-size="9.5" fill="#555">护理/烹饪/仓储 SOP</text>
+  <text x="736" y="693" text-anchor="middle" font-size="9" fill="#888">Skill Registry + Eval</text>
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#aaa"/>
+    </marker>
+  </defs>
+</svg>

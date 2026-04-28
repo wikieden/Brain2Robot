@@ -1,0 +1,100 @@
+<svg viewBox="0 0 860 660" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,-apple-system,sans-serif">
+  <title>技艺结晶 · Techne Crystallization Pipeline</title>
+  <rect width="860" height="660" fill="#f8f8f8"/>
+  <text x="430" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#111">技艺结晶  ·  Techne Crystallization</text>
+  <text x="430" y="44" text-anchor="middle" font-size="10" fill="#888">人类演示 → 多模态采集 → 分割 → 标注 → 双线蒸馏 → 技能库</text>
+  <text x="24" y="64" font-size="9" font-weight="600" letter-spacing="1" fill="#999">STAGE 1 · 多模态采集</text>
+  <rect x="20" y="72" width="820" height="56" rx="8" fill="#2d3748"/>
+  <text x="110" y="94" text-anchor="middle" font-size="10" font-weight="600" fill="#90cdf4">RGB 视频</text>
+  <text x="110" y="108" text-anchor="middle" font-size="9" fill="#718096">第一·第三视角</text>
+  <line x1="190" y1="100" x2="220" y2="100" stroke="#4a5568" stroke-width="1"/>
+  <text x="278" y="94" text-anchor="middle" font-size="10" font-weight="600" fill="#90cdf4">动作捕捉</text>
+  <text x="278" y="108" text-anchor="middle" font-size="9" fill="#718096">6DoF 关节轨迹</text>
+  <line x1="356" y1="100" x2="386" y2="100" stroke="#4a5568" stroke-width="1"/>
+  <text x="444" y="94" text-anchor="middle" font-size="10" font-weight="600" fill="#90cdf4">力/触觉传感</text>
+  <text x="444" y="108" text-anchor="middle" font-size="9" fill="#718096">抓握力·接触点</text>
+  <line x1="524" y1="100" x2="554" y2="100" stroke="#4a5568" stroke-width="1"/>
+  <text x="612" y="94" text-anchor="middle" font-size="10" font-weight="600" fill="#90cdf4">眼动追踪</text>
+  <text x="612" y="108" text-anchor="middle" font-size="9" fill="#718096">注意力序列</text>
+  <line x1="692" y1="100" x2="722" y2="100" stroke="#4a5568" stroke-width="1"/>
+  <text x="773" y="94" text-anchor="middle" font-size="10" font-weight="600" fill="#fbd38d">硬件同步</text>
+  <text x="773" y="108" text-anchor="middle" font-size="9" fill="#718096">毫秒级时间戳对齐</text>
+  <line x1="430" y1="128" x2="430" y2="148" stroke="#aaa" stroke-width="1.4" marker-end="url(#f)"/>
+  <text x="24" y="164" font-size="9" font-weight="600" letter-spacing="1" fill="#999">STAGE 2 · 演示分割</text>
+  <rect x="20" y="172" width="820" height="60" rx="8" fill="#fff" stroke="#d6a520" stroke-width="1.6"/>
+  <rect x="20" y="172" width="4" height="60" rx="2" fill="#d6a520"/>
+  <text x="50" y="192" font-size="10" font-weight="700" fill="#7a5a00">多信号投票  →  SubTask 边界定位</text>
+  <rect x="50" y="200" width="158" height="24" rx="4" fill="#FEF9E7" stroke="#d6a520" stroke-width="0.8"/>
+  <text x="129" y="216" text-anchor="middle" font-size="9" fill="#7a5a00">动作速度骤降</text>
+  <rect x="220" y="200" width="158" height="24" rx="4" fill="#FEF9E7" stroke="#d6a520" stroke-width="0.8"/>
+  <text x="299" y="216" text-anchor="middle" font-size="9" fill="#7a5a00">物体状态跳变</text>
+  <rect x="390" y="200" width="158" height="24" rx="4" fill="#FEF9E7" stroke="#d6a520" stroke-width="0.8"/>
+  <text x="469" y="216" text-anchor="middle" font-size="9" fill="#7a5a00">眼动焦点切换</text>
+  <rect x="560" y="200" width="160" height="24" rx="4" fill="#FEF9E7" stroke="#d6a520" stroke-width="0.8"/>
+  <text x="640" y="216" text-anchor="middle" font-size="9" fill="#7a5a00">力传感器归零</text>
+  <text x="756" y="212" text-anchor="middle" font-size="9" fill="#999">3/4 信号一致</text>
+  <text x="756" y="223" text-anchor="middle" font-size="9" fill="#999">→ 确认边界</text>
+  <line x1="430" y1="232" x2="430" y2="252" stroke="#aaa" stroke-width="1.4" marker-end="url(#f)"/>
+  <text x="24" y="268" font-size="9" font-weight="600" letter-spacing="1" fill="#999">STAGE 3 · 自动标注</text>
+  <rect x="20" y="276" width="820" height="68" rx="8" fill="#fff" stroke="#b85450" stroke-width="1.6"/>
+  <rect x="20" y="276" width="4" height="68" rx="2" fill="#b85450"/>
+  <text x="50" y="296" font-size="10" font-weight="700" fill="#8a2020">自动标注  →  带结构的演示数据集</text>
+  <rect x="50" y="304" width="360" height="32" rx="5" fill="#FDECEA" stroke="#b85450" stroke-width="0.8"/>
+  <text x="230" y="318" text-anchor="middle" font-size="9.5" font-weight="600" fill="#8a2020">VLM 抽符号谓词（给 BehaviorTree）</text>
+  <text x="230" y="330" text-anchor="middle" font-size="9" fill="#666">逐帧理解状态 → 前后帧差分 → preconditions / effects</text>
+  <rect x="430" y="304" width="400" height="32" rx="5" fill="#FDECEA" stroke="#b85450" stroke-width="0.8"/>
+  <text x="630" y="318" text-anchor="middle" font-size="9.5" font-weight="600" fill="#8a2020">MoCap 抽技能参数（给 L2 执行器）</text>
+  <text x="630" y="330" text-anchor="middle" font-size="9" fill="#666">抓握类型 · 力度范围 · 轨迹关键路径点</text>
+  <line x1="430" y1="344" x2="430" y2="368" stroke="#aaa" stroke-width="1.4"/>
+  <line x1="220" y1="368" x2="640" y2="368" stroke="#aaa" stroke-width="1.4"/>
+  <line x1="220" y1="368" x2="220" y2="388" stroke="#82b366" stroke-width="1.4" marker-end="url(#fg)"/>
+  <line x1="640" y1="368" x2="640" y2="388" stroke="#6C8EBD" stroke-width="1.4" marker-end="url(#fb)"/>
+  <text x="310" y="363" text-anchor="middle" font-size="9" fill="#82b366">线 A · L2 执行</text>
+  <text x="550" y="363" text-anchor="middle" font-size="9" fill="#6C8EBD">线 B · L3 规划</text>
+  <text x="24" y="404" font-size="9" font-weight="600" letter-spacing="1" fill="#999">STAGE 4 · 双线蒸馏</text>
+  <rect x="20" y="412" width="400" height="100" rx="8" fill="#fff" stroke="#82b366" stroke-width="1.8"/>
+  <rect x="20" y="412" width="4" height="100" rx="2" fill="#82b366"/>
+  <text x="50" y="432" font-size="10" font-weight="700" fill="#3a6b3a">线 A · VLA LoRA 微调（L2 执行技能）</text>
+  <text x="50" y="447" font-size="9.5" fill="#555">输入：(视觉帧, SubTask类型) → 关节轨迹</text>
+  <text x="50" y="461" font-size="9.5" fill="#555">基础模型：RDT-1B / π0.6 / GR00T N1.7</text>
+  <text x="50" y="475" font-size="9" fill="#777">每个技能独立 LoRA 适配器 · 按需加载</text>
+  <text x="50" y="489" font-size="9" fill="#777">50–150 次演示 · 训练数小时</text>
+  <text x="50" y="503" font-size="9" fill="#999">学的是：HOW TO MOVE（怎么动）</text>
+  <rect x="440" y="412" width="400" height="100" rx="8" fill="#fff" stroke="#6C8EBD" stroke-width="1.8"/>
+  <rect x="440" y="412" width="4" height="100" rx="2" fill="#6C8EBD"/>
+  <text x="470" y="432" font-size="10" font-weight="700" fill="#3a5a8a">线 B · L3 规划器蒸馏</text>
+  <text x="470" y="447" font-size="9.5" fill="#555">输入：(任务目标, 场景上下文) → SubTask[]</text>
+  <text x="470" y="461" font-size="9.5" fill="#555">短期：few-shot 注入 L3 提示词（即时生效）</text>
+  <text x="470" y="475" font-size="9" fill="#777">长期：积累足量后 LoRA 微调 Qwen3-7B</text>
+  <text x="470" y="489" font-size="9" fill="#777">蒸馏任务拆解风格 · 烧进模型权重</text>
+  <text x="470" y="503" font-size="9" fill="#999">学的是：HOW TO PLAN（怎么拆）</text>
+  <line x1="220" y1="512" x2="220" y2="540" stroke="#82b366" stroke-width="1.3"/>
+  <line x1="640" y1="512" x2="640" y2="540" stroke="#6C8EBD" stroke-width="1.3"/>
+  <line x1="220" y1="540" x2="640" y2="540" stroke="#aaa" stroke-width="1.3"/>
+  <line x1="430" y1="540" x2="430" y2="556" stroke="#aaa" stroke-width="1.4" marker-end="url(#f)"/>
+  <text x="24" y="572" font-size="9" font-weight="600" letter-spacing="1" fill="#999">STAGE 5 · 评估与注册</text>
+  <rect x="20" y="580" width="820" height="62" rx="8" fill="#fff" stroke="#6C8EBD" stroke-width="1.6"/>
+  <rect x="20" y="580" width="4" height="62" rx="2" fill="#6C8EBD"/>
+  <text x="50" y="600" font-size="10" font-weight="700" fill="#3a5a8a">泛化测试  →  成功率 &gt; 90%  →  技能库注册</text>
+  <rect x="50" y="608" width="200" height="26" rx="4" fill="#EBF3FB" stroke="#6C8EBD" stroke-width="0.8"/>
+  <text x="150" y="622" text-anchor="middle" font-size="9" fill="#3a5a8a">变化条件测试（外观·位置·光线）</text>
+  <rect x="264" y="608" width="200" height="26" rx="4" fill="#EBF3FB" stroke="#6C8EBD" stroke-width="0.8"/>
+  <text x="364" y="622" text-anchor="middle" font-size="9" fill="#3a5a8a">失败案例→下轮补充采集方向</text>
+  <rect x="478" y="608" width="200" height="26" rx="4" fill="#EBF3FB" stroke="#6C8EBD" stroke-width="0.8"/>
+  <text x="578" y="622" text-anchor="middle" font-size="9" fill="#3a5a8a">注册：skill_id · LoRA · precond · effects</text>
+  <rect x="692" y="608" width="136" height="26" rx="4" fill="#2d3748"/>
+  <text x="760" y="622" text-anchor="middle" font-size="9" font-weight="600" fill="#90cdf4">→ L2 技能库</text>
+  <text x="760" y="633" text-anchor="middle" font-size="8.5" fill="#718096">L3 可调用</text>
+  <text x="430" y="652" text-anchor="middle" font-size="9" fill="#aaa">Brain2Robot · 技艺结晶 Techne Crystallization v1.0 · 2026.04</text>
+  <defs>
+    <marker id="f" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#aaa"/>
+    </marker>
+    <marker id="fg" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#82b366"/>
+    </marker>
+    <marker id="fb" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#6C8EBD"/>
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,135 @@
+<svg viewBox="0 0 860 640" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,-apple-system,sans-serif">
+  <title>主动触发引擎架构</title>
+  <rect width="860" height="640" fill="#f8f8f8"/>
+  <text x="430" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#111">主动触发引擎</text>
+  <text x="430" y="44" text-anchor="middle" font-size="10" fill="#888">世界状态监测 · 规则检测 · LLM节流 · 触发打包→L3</text>
+
+  <!-- LAYER 1: World Monitoring -->
+  <text x="24" y="64" font-size="9" font-weight="600" letter-spacing="1" fill="#999">LAYER 1 · 世界状态监测  5Hz</text>
+  <rect x="20" y="72" width="820" height="52" rx="8" fill="#2d3748"/>
+  <text x="430" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="#e2e8f0">世界快照差分引擎</text>
+  <text x="200" y="112" text-anchor="middle" font-size="9.5" fill="#90cdf4">相邻帧对比 · 提取状态跳变</text>
+  <line x1="380" y1="100" x2="480" y2="100" stroke="#4a5568" stroke-width="1"/>
+  <text x="550" y="108" text-anchor="middle" font-size="9.5" fill="#718096">输出：变化事件流 { 对象, 属性, 方向 }</text>
+  <text x="750" y="108" text-anchor="middle" font-size="9" fill="#4a5568">语义类别判断</text>
+
+  <line x1="430" y1="124" x2="430" y2="144" stroke="#aaa" stroke-width="1.4" marker-end="url(#e)"/>
+
+  <!-- LAYER 2: Rule Engine -->
+  <text x="24" y="160" font-size="9" font-weight="600" letter-spacing="1" fill="#999">LAYER 2 · 规则检测层  （轻量·实时）</text>
+
+  <rect x="20" y="168" width="185" height="88" rx="7" fill="#fff" stroke="#6C8EBD" stroke-width="1.4"/>
+  <rect x="20" y="168" width="185" height="6" rx="7" fill="#6C8EBD"/>
+  <text x="112" y="188" text-anchor="middle" font-size="10" font-weight="700" fill="#3a5a8a">补给类</text>
+  <text x="112" y="204" text-anchor="middle" font-size="9" fill="#555">容器空 · 耗材不足</text>
+  <text x="112" y="218" text-anchor="middle" font-size="9" fill="#555">资源低于阈值</text>
+  <text x="112" y="232" text-anchor="middle" font-size="9" fill="#999">优先级：中</text>
+  <text x="112" y="246" text-anchor="middle" font-size="8.5" fill="#bbb">→ LLM节流层</text>
+
+  <rect x="220" y="168" width="185" height="88" rx="7" fill="#fff" stroke="#b85450" stroke-width="1.8"/>
+  <rect x="220" y="168" width="185" height="6" rx="7" fill="#b85450"/>
+  <text x="312" y="188" text-anchor="middle" font-size="10" font-weight="700" fill="#8a2020">安全类 ⚡</text>
+  <text x="312" y="204" text-anchor="middle" font-size="9" fill="#555">跌倒 · 倾倒 · 危险接近</text>
+  <text x="312" y="218" text-anchor="middle" font-size="9" fill="#555">门长时间未关</text>
+  <text x="312" y="232" text-anchor="middle" font-size="9" fill="#c0392b">优先级：最高</text>
+  <text x="312" y="246" text-anchor="middle" font-size="8.5" fill="#c0392b">→ 跳过节流，直达L2</text>
+
+  <rect x="420" y="168" width="185" height="88" rx="7" fill="#fff" stroke="#82b366" stroke-width="1.4"/>
+  <rect x="420" y="168" width="185" height="6" rx="7" fill="#82b366"/>
+  <text x="512" y="188" text-anchor="middle" font-size="10" font-weight="700" fill="#3a6b3a">服务类</text>
+  <text x="512" y="204" text-anchor="middle" font-size="9" fill="#555">人靠近 · 呼唤名字</text>
+  <text x="512" y="218" text-anchor="middle" font-size="9" fill="#555">任务完成等待下步</text>
+  <text x="512" y="232" text-anchor="middle" font-size="9" fill="#999">优先级：中高</text>
+  <text x="512" y="246" text-anchor="middle" font-size="8.5" fill="#bbb">→ LLM节流层</text>
+
+  <rect x="620" y="168" width="220" height="88" rx="7" fill="#fff" stroke="#d6a520" stroke-width="1.4"/>
+  <rect x="620" y="168" width="220" height="6" rx="7" fill="#d6a520"/>
+  <text x="730" y="188" text-anchor="middle" font-size="10" font-weight="700" fill="#7a5a00">环境类</text>
+  <text x="730" y="204" text-anchor="middle" font-size="9" fill="#555">时间触发 · 天气变化</text>
+  <text x="730" y="218" text-anchor="middle" font-size="9" fill="#555">设备状态完成</text>
+  <text x="730" y="232" text-anchor="middle" font-size="9" fill="#999">优先级：低中</text>
+  <text x="730" y="246" text-anchor="middle" font-size="8.5" fill="#bbb">→ LLM节流层</text>
+
+  <!-- Safety bypass arrow -->
+  <line x1="312" y1="256" x2="312" y2="290" stroke="#b85450" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#er)"/>
+  <text x="320" y="278" font-size="9" fill="#b85450">安全直通</text>
+
+  <!-- Merge window -->
+  <line x1="112" y1="256" x2="112" y2="300" stroke="#aaa" stroke-width="1.2"/>
+  <line x1="512" y1="256" x2="512" y2="300" stroke="#aaa" stroke-width="1.2"/>
+  <line x1="730" y1="256" x2="730" y2="300" stroke="#aaa" stroke-width="1.2"/>
+  <line x1="112" y1="300" x2="730" y2="300" stroke="#aaa" stroke-width="1.2"/>
+  <line x1="430" y1="300" x2="430" y2="316" stroke="#aaa" stroke-width="1.4" marker-end="url(#e)"/>
+
+  <rect x="200" y="290" width="130" height="18" rx="4" fill="#EBF3FB" stroke="#6C8EBD" stroke-width="0.8"/>
+  <text x="265" y="303" text-anchor="middle" font-size="8.5" fill="#3a5a8a">合并窗口 ~2s · 去重合并</text>
+
+  <!-- LAYER 3: LLM Throttle -->
+  <text x="24" y="332" font-size="9" font-weight="600" letter-spacing="1" fill="#999">LAYER 3 · LLM 节流层  （读空气判断）</text>
+
+  <rect x="20" y="340" width="820" height="130" rx="8" fill="#fff" stroke="#6C8EBD" stroke-width="1.8"/>
+  <rect x="20" y="340" width="4" height="130" rx="2" fill="#6C8EBD"/>
+  <text x="50" y="360" font-size="11" font-weight="700" fill="#3a5a8a">LLM 节流判断  ·  二元输出：行动 or 等待</text>
+
+  <!-- 4 inputs to throttle -->
+  <rect x="36" y="368" width="172" height="58" rx="5" fill="#EBF3FB" stroke="#6C8EBD" stroke-width="0.8"/>
+  <text x="122" y="384" text-anchor="middle" font-size="9.5" font-weight="600" fill="#3a5a8a">合并触发事件组</text>
+  <text x="122" y="398" text-anchor="middle" font-size="9" fill="#555">需求类型 · 涉及人物</text>
+  <text x="122" y="412" text-anchor="middle" font-size="9" fill="#777">触发强度 · 发生时间</text>
+
+  <rect x="222" y="368" width="172" height="58" rx="5" fill="#EBF3FB" stroke="#6C8EBD" stroke-width="0.8"/>
+  <text x="308" y="384" text-anchor="middle" font-size="9.5" font-weight="600" fill="#3a5a8a">人物当前状态</text>
+  <text x="308" y="398" text-anchor="middle" font-size="9" fill="#555">专注度 · 情绪 · 姿态</text>
+  <text x="308" y="412" text-anchor="middle" font-size="9" fill="#777">多模态氛围感知</text>
+
+  <rect x="408" y="368" width="200" height="58" rx="5" fill="#EBF3FB" stroke="#6C8EBD" stroke-width="0.8"/>
+  <text x="508" y="384" text-anchor="middle" font-size="9.5" font-weight="600" fill="#3a5a8a">偏好记忆 + 执行历史</text>
+  <text x="508" y="398" text-anchor="middle" font-size="9" fill="#555">12分钟前倒过·喝了一半</text>
+  <text x="508" y="412" text-anchor="middle" font-size="9" fill="#777">昨天同时段→未喝 [参考]</text>
+
+  <rect x="622" y="368" width="202" height="58" rx="5" fill="#EBF3FB" stroke="#6C8EBD" stroke-width="0.8"/>
+  <text x="723" y="384" text-anchor="middle" font-size="9.5" font-weight="600" fill="#3a5a8a">时间 · 环境上下文</text>
+  <text x="723" y="398" text-anchor="middle" font-size="9" fill="#555">当前时段 · 家庭规范</text>
+  <text x="723" y="412" text-anchor="middle" font-size="9" fill="#777">其他成员状态</text>
+
+  <text x="430" y="456" text-anchor="middle" font-size="9" fill="#999">节流结果也反哺偏好库 · "触发了但等待→人自行处理" 是有效信号</text>
+  <text x="430" y="468" text-anchor="middle" font-size="9" fill="#999">等待队列：每隔一段时间重新评估，条件变化或超时丢弃</text>
+
+  <!-- Two outputs -->
+  <line x1="300" y1="470" x2="220" y2="496" stroke="#82b366" stroke-width="1.3" marker-end="url(#eg)"/>
+  <line x1="560" y1="470" x2="640" y2="496" stroke="#b85450" stroke-width="1.3" marker-end="url(#er)"/>
+  <text x="200" y="490" text-anchor="end" font-size="9" fill="#82b366">行动</text>
+  <text x="660" y="490" font-size="9" fill="#b85450">等待队列</text>
+
+  <!-- ACTION path -->
+  <rect x="30" y="496" width="360" height="56" rx="7" fill="#EEF7EB" stroke="#82b366" stroke-width="1.4"/>
+  <text x="210" y="516" text-anchor="middle" font-size="10" font-weight="700" fill="#3a6b3a">触发信息打包 → L3</text>
+  <text x="210" y="531" text-anchor="middle" font-size="9" fill="#555">合并事件组 + 推断需求 + 人物身份 + 世界快照</text>
+  <text x="210" y="545" text-anchor="middle" font-size="9" fill="#777">L3角色：主动决策者（非指令分解者）</text>
+
+  <!-- WAIT path -->
+  <rect x="470" y="496" width="360" height="56" rx="7" fill="#FDECEA" stroke="#b85450" stroke-width="1.4"/>
+  <text x="650" y="516" text-anchor="middle" font-size="10" font-weight="700" fill="#8a2020">等待队列</text>
+  <text x="650" y="531" text-anchor="middle" font-size="9" fill="#555">定期重新评估 · 条件好转时重入节流</text>
+  <text x="650" y="545" text-anchor="middle" font-size="9" fill="#777">超时丢弃 · 人自处理后标记为负反馈</text>
+
+  <!-- Arrow to L3 -->
+  <line x1="210" y1="552" x2="210" y2="572" stroke="#82b366" stroke-width="1.4" marker-end="url(#eg)"/>
+  <rect x="100" y="572" width="220" height="36" rx="6" fill="#6C8EBD"/>
+  <text x="210" y="588" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">L3 认知层  · 自主规划</text>
+  <text x="210" y="602" text-anchor="middle" font-size="9" fill="#dbeafe">SubTask[] 输出给 L2 执行</text>
+
+  <text x="430" y="632" text-anchor="middle" font-size="9" fill="#aaa">Brain2Robot · 主动触发引擎 v1.0 · 2026.04</text>
+
+  <defs>
+    <marker id="e" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#aaa"/>
+    </marker>
+    <marker id="er" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#b85450"/>
+    </marker>
+    <marker id="eg" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#82b366"/>
+    </marker>
+  </defs>
+</svg>
