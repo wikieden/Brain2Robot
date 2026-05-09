@@ -1,0 +1,112 @@
+<svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" role="img" font-family="ui-monospace,'SF Mono',monospace">
+  <title>L2 协调层架构总览</title>
+  <desc>L2 协调层五大子模块：BehaviorTree调度器、VLN导航、技能执行器、抓取子系统、社交响应执行</desc>
+
+  <rect width="900" height="560" fill="#0f172a" rx="10"/>
+  <text x="450" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#e2e8f0">L2 协调层 · 架构总览</text>
+  <text x="450" y="44" text-anchor="middle" font-size="10" fill="#475569">BehaviorTree 调度 · 符号世界模型 · 执行与反馈</text>
+
+  <defs>
+    <marker id="a-gray" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/></marker>
+    <marker id="a-blue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#2563eb"/></marker>
+    <marker id="a-green" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#16a34a"/></marker>
+    <marker id="a-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#dc2626"/></marker>
+    <marker id="a-cyan" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#0891b2"/></marker>
+    <marker id="a-amber" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#d97706"/></marker>
+    <marker id="a-purple" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#7c3aed"/></marker>
+  </defs>
+
+  <!-- L3 interface -->
+  <rect x="290" y="58" width="320" height="36" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="450" y="73" text-anchor="middle" font-size="10" fill="#94a3b8">L3 认知层</text>
+  <text x="450" y="87" text-anchor="middle" font-size="9" fill="#64748b">SubTask[]  ↓         ErrorReport  ↑</text>
+
+  <!-- L2 container -->
+  <rect x="12" y="108" width="876" height="340" rx="8" fill="none" stroke="#1e40af" stroke-width="1" stroke-dasharray="6,3"/>
+  <text x="26" y="122" font-size="9" fill="#3b82f6">L2 协调层  ~5Hz</text>
+
+  <!-- BehaviorTree Scheduler -->
+  <rect x="270" y="128" width="360" height="100" rx="6" fill="#0f1e3d" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="450" y="150" text-anchor="middle" font-size="11" font-weight="700" fill="#60a5fa">BehaviorTree 调度器</text>
+  <text x="450" y="165" text-anchor="middle" font-size="9" fill="#3b82f6">BehaviorTree.CPP · ~5Hz tick</text>
+  <text x="310" y="183" font-size="8.5" fill="#94a3b8">① 检查前置条件（符号世界模型）</text>
+  <text x="310" y="196" font-size="8.5" fill="#94a3b8">② 路由到对应执行模块</text>
+  <text x="310" y="209" font-size="8.5" fill="#94a3b8">③ 验证 effects · 更新世界模型 · 上报失败</text>
+
+  <!-- Symbolic World Model -->
+  <rect x="650" y="128" width="224" height="100" rx="6" fill="#052e16" stroke="#15803d" stroke-width="1.5"/>
+  <text x="762" y="150" text-anchor="middle" font-size="10" font-weight="700" fill="#4ade80">符号世界模型</text>
+  <text x="762" y="165" text-anchor="middle" font-size="8.5" fill="#16a34a">Symbolic World Model</text>
+  <text x="665" y="182" font-size="8" fill="#166534">robot.hand = empty</text>
+  <text x="665" y="195" font-size="8" fill="#166534">robot.near = kettle_01</text>
+  <text x="665" y="208" font-size="8" fill="#166534">cup_01.filled = false</text>
+  <text x="762" y="222" text-anchor="middle" font-size="8" fill="#064e3b">precondition 检查 · effects 写入</text>
+
+  <!-- BT <-> World Model -->
+  <line x1="630" y1="178" x2="648" y2="178" stroke="#16a34a" stroke-width="1.2" marker-end="url(#a-green)"/>
+  <line x1="648" y1="188" x2="630" y2="188" stroke="#16a34a" stroke-width="1.2" marker-end="url(#a-green)"/>
+
+  <!-- VLN Navigation -->
+  <rect x="14" y="252" width="192" height="120" rx="6" fill="#001a1f" stroke="#0e7490" stroke-width="1.5"/>
+  <text x="110" y="272" text-anchor="middle" font-size="10" font-weight="700" fill="#22d3ee">VLN 导航</text>
+  <text x="110" y="286" text-anchor="middle" font-size="8.5" fill="#0e7490">NAVIGATE 类 SubTask</text>
+  <text x="24" y="304" font-size="8" fill="#94a3b8">已知目标 → NavMesh 规划</text>
+  <text x="24" y="317" font-size="8" fill="#94a3b8">未知目标 → VLN 语义搜索</text>
+  <text x="24" y="330" font-size="8" fill="#94a3b8">DWA/TEB 局部避障</text>
+  <text x="24" y="347" font-size="8" fill="#64748b">输出: 路径点 (x,y,θ) → L1底盘</text>
+  <text x="24" y="362" font-size="8" fill="#ef4444">失败: NAVIGATION_BLOCKED</text>
+
+  <!-- Skill Executor -->
+  <rect x="220" y="252" width="268" height="120" rx="6" fill="#150d2e" stroke="#6d28d9" stroke-width="1.5"/>
+  <text x="354" y="272" text-anchor="middle" font-size="10" font-weight="700" fill="#a78bfa">技能执行器</text>
+  <text x="354" y="286" text-anchor="middle" font-size="8.5" fill="#7c3aed">GRASP · POUR · PLACE · OPEN</text>
+  <text x="230" y="304" font-size="8" fill="#94a3b8">按 skill_id 加载 LoRA 适配器</text>
+  <text x="230" y="317" font-size="8" fill="#94a3b8">Hot(3个显存) / Warm(~200ms) / Preload</text>
+  <text x="230" y="330" font-size="8" fill="#94a3b8">VLA 执行 → 关节轨迹 → L1</text>
+  <text x="230" y="347" font-size="8" fill="#94a3b8">力矩 + 视觉双重验证 effects</text>
+  <text x="230" y="362" font-size="8" fill="#ef4444">失败: GRASP_FAILED · TIMEOUT</text>
+
+  <!-- Grasp Subsystem -->
+  <rect x="230" y="384" width="258" height="56" rx="5" fill="#0d0a20" stroke="#4338ca" stroke-width="1"/>
+  <text x="359" y="400" text-anchor="middle" font-size="9" font-weight="700" fill="#818cf8">抓取子系统</text>
+  <text x="240" y="414" font-size="7.5" fill="#6366f1">接触前: AnyGrasp 姿态估计 (~10Hz)</text>
+  <text x="240" y="426" font-size="7.5" fill="#6366f1">接触时: Diffusion Policy 柔顺控制</text>
+  <text x="240" y="438" font-size="7.5" fill="#4338ca">置信度&lt;0.5 → 换方向/换技能</text>
+
+  <!-- Social Response -->
+  <rect x="502" y="252" width="370" height="120" rx="6" fill="#1c1005" stroke="#b45309" stroke-width="1.5"/>
+  <text x="687" y="272" text-anchor="middle" font-size="10" font-weight="700" fill="#fbbf24">社交响应执行</text>
+  <text x="687" y="286" text-anchor="middle" font-size="8.5" fill="#d97706">SPEAK 类 SubTask</text>
+  <text x="512" y="304" font-size="8" fill="#94a3b8">TTS 合成（本地，~100ms首帧）</text>
+  <text x="512" y="317" font-size="8" fill="#94a3b8">面部表情 + 姿态协调（与语音同步）</text>
+  <text x="512" y="330" font-size="8" fill="#64748b">brief→点头  warm→微笑转体  neutral→保持</text>
+  <text x="512" y="347" font-size="8" fill="#94a3b8">中断处理: 用户开口 → 立即停止 TTS</text>
+  <text x="512" y="362" font-size="8" fill="#64748b">标记 INTERRUPTED（非失败，不上报L3）</text>
+
+  <!-- L1 interface bottom-left -->
+  <rect x="120" y="462" width="245" height="34" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="242" y="477" text-anchor="middle" font-size="9" fill="#94a3b8">L1 执行层</text>
+  <text x="242" y="490" text-anchor="middle" font-size="8.5" fill="#64748b">关节轨迹 · 力矩指令 · 底盘路径点</text>
+
+  <!-- Safety Monitor -->
+  <rect x="502" y="384" width="168" height="34" rx="4" fill="#1a0505" stroke="#dc2626" stroke-width="1"/>
+  <text x="586" y="398" text-anchor="middle" font-size="8.5" font-weight="700" fill="#f87171">安全监控</text>
+  <text x="586" y="411" text-anchor="middle" font-size="8" fill="#b91c1c">碰撞检测 · SAFETY_STOP → L1 直通</text>
+
+  <!-- L1 bottom-right -->
+  <rect x="506" y="462" width="160" height="34" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="586" y="477" text-anchor="middle" font-size="9" fill="#94a3b8">L1 执行层</text>
+  <text x="586" y="490" text-anchor="middle" font-size="8.5" fill="#64748b">PREEMPT_RT · EtherCAT</text>
+
+  <!-- Arrows -->
+  <line x1="450" y1="94" x2="450" y2="126" stroke="#2563eb" stroke-width="1.5" marker-end="url(#a-blue)"/>
+  <path d="M320,228 L110,228 L110,250" fill="none" stroke="#0891b2" stroke-width="1.2" marker-end="url(#a-cyan)"/>
+  <line x1="380" y1="228" x2="354" y2="250" stroke="#7c3aed" stroke-width="1.2" marker-end="url(#a-purple)"/>
+  <path d="M580,228 L687,228 L687,250" fill="none" stroke="#d97706" stroke-width="1.2" marker-end="url(#a-amber)"/>
+  <line x1="160" y1="372" x2="190" y2="460" stroke="#64748b" stroke-width="1.2" marker-end="url(#a-gray)"/>
+  <line x1="300" y1="372" x2="260" y2="460" stroke="#64748b" stroke-width="1.2" marker-end="url(#a-gray)"/>
+  <line x1="354" y1="372" x2="354" y2="382" stroke="#4338ca" stroke-width="1" marker-end="url(#a-purple)"/>
+  <line x1="586" y1="418" x2="586" y2="460" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#a-red)"/>
+  <path d="M874,300 L874,74 L612,74" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#a-red)"/>
+  <text x="879" y="250" font-size="8" fill="#dc2626" transform="rotate(90,879,250)">ErrorReport → L3</text>
+</svg>

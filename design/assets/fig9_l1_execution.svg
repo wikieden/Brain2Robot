@@ -1,0 +1,109 @@
+<svg viewBox="0 0 860 540" xmlns="http://www.w3.org/2000/svg" role="img" font-family="ui-monospace,'SF Mono',monospace">
+  <title>L1 执行层架构总览</title>
+  <desc>L1 执行层控制管道：MPC轨迹优化 → WBC全身控制 → EtherCAT实时驱动 → 电机输出，含传感器反馈闭环</desc>
+
+  <rect width="860" height="540" fill="#0f172a" rx="10"/>
+  <text x="430" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#e2e8f0">L1 执行层 · 控制管道与实时驱动</text>
+  <text x="430" y="44" text-anchor="middle" font-size="10" fill="#475569">MPC · WBC/TSID · EtherCAT 1kHz · 传感器反馈</text>
+
+  <defs>
+    <marker id="b-gray" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/></marker>
+    <marker id="b-blue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#2563eb"/></marker>
+    <marker id="b-green" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#16a34a"/></marker>
+    <marker id="b-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#dc2626"/></marker>
+    <marker id="b-amber" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#d97706"/></marker>
+    <marker id="b-cyan" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#0891b2"/></marker>
+  </defs>
+
+  <!-- L2 interface -->
+  <rect x="220" y="56" width="420" height="36" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="430" y="71" text-anchor="middle" font-size="10" fill="#94a3b8">L2 协调层</text>
+  <text x="430" y="85" text-anchor="middle" font-size="9" fill="#64748b">关节轨迹目标 / 末端执行器目标 / 接触状态  ↓     反馈信号  ↑</text>
+
+  <!-- L1 container -->
+  <rect x="12" y="106" width="700" height="390" rx="8" fill="none" stroke="#1e3a5f" stroke-width="1" stroke-dasharray="6,3"/>
+  <text x="26" y="120" font-size="9" fill="#3b82f6">L1 执行层  1kHz</text>
+
+  <!-- MPC -->
+  <rect x="24" y="128" width="676" height="88" rx="6" fill="#0c1e36" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="362" y="150" text-anchor="middle" font-size="11" font-weight="700" fill="#60a5fa">轨迹优化  ·  MPC</text>
+  <text x="362" y="165" text-anchor="middle" font-size="9" fill="#3b82f6">Aligator / ProxDDP · ~50Hz · 预测窗口 500ms（50步）</text>
+  <text x="40" y="183" font-size="8.5" fill="#94a3b8">约束：关节限位 · 接触约束 · 末端轨迹跟踪</text>
+  <text x="40" y="197" font-size="8.5" fill="#94a3b8">输出：当前步最优关节目标（q*, dq*）→ WBC · 滚动时域更新</text>
+  <rect x="660" y="130" width="34" height="15" rx="3" fill="#1d4ed8"/>
+  <text x="677" y="141" text-anchor="middle" font-size="8" font-weight="700" fill="#bfdbfe">50Hz</text>
+
+  <!-- WBC / TSID -->
+  <rect x="24" y="232" width="480" height="110" rx="6" fill="#0d1a10" stroke="#15803d" stroke-width="1.5"/>
+  <text x="264" y="254" text-anchor="middle" font-size="11" font-weight="700" fill="#4ade80">全身控制  ·  WBC / TSID</text>
+  <text x="264" y="269" text-anchor="middle" font-size="9" fill="#16a34a">Task Space Inverse Dynamics · Pinocchio · QP solver</text>
+  <rect x="36" y="278" width="460" height="56" rx="4" fill="#021207" stroke="#14532d" stroke-width="1"/>
+  <text x="50" y="292" font-size="8.5" fill="#4ade80">P1 重心/平衡约束</text>
+  <text x="200" y="292" font-size="8" fill="#64748b">（双足必须满足）</text>
+  <text x="50" y="306" font-size="8.5" fill="#86efac">P2 安全约束</text>
+  <text x="200" y="306" font-size="8" fill="#64748b">关节限位 · 自碰撞回避</text>
+  <text x="50" y="320" font-size="8.5" fill="#bbf7d0">P3 末端执行器轨迹</text>
+  <text x="200" y="320" font-size="8" fill="#64748b">来自 MPC 的位置/速度目标</text>
+  <text x="50" y="334" font-size="8.5" fill="#d1fae5">P4 姿态调节</text>
+  <text x="200" y="334" font-size="8" fill="#64748b">偏离默认姿态时的回正力矩</text>
+  <rect x="460" y="234" width="34" height="15" rx="3" fill="#15803d"/>
+  <text x="477" y="245" text-anchor="middle" font-size="8" font-weight="700" fill="#bbf7d0">1kHz</text>
+
+  <!-- Force/Tactile Feedback -->
+  <rect x="520" y="232" width="180" height="110" rx="6" fill="#1a0f00" stroke="#b45309" stroke-width="1.5"/>
+  <text x="610" y="254" text-anchor="middle" font-size="10" font-weight="700" fill="#fbbf24">力/触觉反馈</text>
+  <text x="530" y="272" font-size="8.5" fill="#94a3b8">腕部 F/T 传感器</text>
+  <text x="530" y="286" font-size="8.5" fill="#94a3b8">关节力矩监测</text>
+  <text x="530" y="300" font-size="8" fill="#d97706">→ 接触检测 → L2</text>
+  <text x="530" y="314" font-size="8" fill="#d97706">→ 抓取稳定判定</text>
+  <text x="530" y="328" font-size="8" fill="#ef4444">→ SAFETY_STOP → L2</text>
+
+  <!-- EtherCAT Bus -->
+  <rect x="24" y="360" width="676" height="50" rx="6" fill="#1a0a00" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="362" y="381" text-anchor="middle" font-size="11" font-weight="700" fill="#fb923c">EtherCAT 总线  ·  1kHz</text>
+  <text x="362" y="397" text-anchor="middle" font-size="9" fill="#9a3412">PREEMPT_RT Linux · 周期抖动 &lt;100μs · 读编码器/力矩 · 写力矩设定值</text>
+
+  <!-- ODrive Pro -->
+  <rect x="24" y="428" width="320" height="56" rx="6" fill="#1a1000" stroke="#ca8a04" stroke-width="1.5"/>
+  <text x="184" y="448" text-anchor="middle" font-size="10" font-weight="700" fill="#fbbf24">ODrive Pro</text>
+  <text x="184" y="463" text-anchor="middle" font-size="9" fill="#a16207">高性能关节：手臂 · 腰部 · 髋部</text>
+  <text x="184" y="477" text-anchor="middle" font-size="8" fill="#78350f">FOC 电流控制 · 力矩精度 &lt;1%</text>
+
+  <!-- VESC 6 -->
+  <rect x="360" y="428" width="340" height="56" rx="6" fill="#101a00" stroke="#65a30d" stroke-width="1.5"/>
+  <text x="530" y="448" text-anchor="middle" font-size="10" font-weight="700" fill="#a3e635">VESC 6</text>
+  <text x="530" y="463" text-anchor="middle" font-size="9" fill="#4d7c0f">底盘轮驱 · 低负载关节</text>
+  <text x="530" y="477" text-anchor="middle" font-size="8" fill="#365314">开源驱动 · 可扩展</text>
+
+  <!-- Compute Platform -->
+  <rect x="724" y="128" width="124" height="356" rx="6" fill="#111827" stroke="#374151" stroke-width="1"/>
+  <text x="786" y="150" text-anchor="middle" font-size="9" font-weight="700" fill="#9ca3af">计算平台</text>
+  <text x="786" y="168" text-anchor="middle" font-size="9" fill="#6b7280">Jetson Thor</text>
+  <text x="786" y="183" text-anchor="middle" font-size="8.5" fill="#4b5563">275 TOPS</text>
+  <text x="786" y="198" text-anchor="middle" font-size="8" fill="#374151">JetPack 7.0</text>
+  <line x1="786" y1="210" x2="786" y2="230" stroke="#374151" stroke-width="1"/>
+  <text x="786" y="245" text-anchor="middle" font-size="8.5" fill="#6b7280">MPC</text>
+  <text x="786" y="259" text-anchor="middle" font-size="8" fill="#4b5563">GPU 加速</text>
+  <line x1="786" y1="272" x2="786" y2="292" stroke="#374151" stroke-width="1"/>
+  <text x="786" y="308" text-anchor="middle" font-size="8.5" fill="#6b7280">WBC/TSID</text>
+  <text x="786" y="322" text-anchor="middle" font-size="8" fill="#4b5563">CPU 实时核</text>
+  <line x1="786" y1="335" x2="786" y2="355" stroke="#374151" stroke-width="1"/>
+  <text x="786" y="370" text-anchor="middle" font-size="8.5" fill="#6b7280">EtherCAT</text>
+  <text x="786" y="384" text-anchor="middle" font-size="8" fill="#4b5563">专用实时核</text>
+  <line x1="786" y1="397" x2="786" y2="417" stroke="#374151" stroke-width="1"/>
+  <text x="786" y="432" text-anchor="middle" font-size="8.5" fill="#6b7280">PREEMPT_RT</text>
+  <text x="786" y="446" text-anchor="middle" font-size="8" fill="#4b5563">内核补丁</text>
+  <text x="786" y="460" text-anchor="middle" font-size="8" fill="#374151">周期抖动 &lt;100μs</text>
+
+  <!-- Arrows -->
+  <line x1="430" y1="92" x2="430" y2="126" stroke="#2563eb" stroke-width="1.5" marker-end="url(#b-blue)"/>
+  <line x1="264" y1="216" x2="264" y2="230" stroke="#16a34a" stroke-width="1.5" marker-end="url(#b-green)"/>
+  <line x1="264" y1="342" x2="264" y2="358" stroke="#16a34a" stroke-width="2" marker-end="url(#b-green)"/>
+  <line x1="184" y1="410" x2="184" y2="426" stroke="#ca8a04" stroke-width="1.5" marker-end="url(#b-amber)"/>
+  <line x1="530" y1="410" x2="530" y2="426" stroke="#65a30d" stroke-width="1.5" marker-end="url(#b-green)"/>
+  <path d="M90,484 L20,484 L20,296 L22,296" fill="none" stroke="#0891b2" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#b-cyan)"/>
+  <text x="6" y="400" font-size="8" fill="#0891b2" transform="rotate(-90,6,400)">传感器反馈</text>
+  <path d="M700,287 L720,287 L720,74 L642,74" fill="none" stroke="#d97706" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#b-amber)"/>
+  <path d="M700,325 L714,325 L714,80 L642,80" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#b-red)"/>
+  <path d="M100,356 L100,218 L22,218" fill="none" stroke="#0891b2" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#b-cyan)"/>
+</svg>
