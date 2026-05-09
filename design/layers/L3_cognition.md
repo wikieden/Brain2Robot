@@ -228,4 +228,146 @@ task_failures:
 
 ---
 
-*待补充：完整提示词模板示例*
+## 完整提示词模板示例
+
+以下为一次真实规划周期的完整输入。场景：wiki 请机器人倒水，第一次 top 抓取失败后触发重规划。
+
+---
+
+### Layer 1 · 系统提示（静态 · KV-cached）
+
+```
+你是一台家庭服务机器人。你的工作是理解用户需求，将其分解为
+可执行的子任务序列，并在失败时生成替代方案。
+
+[能力清单]
+导航: navigate_to(target_id)
+抓取: grasp_object(target_id, grasp_type: top|side|hook)
+放置: place_object(target_id, location)
+倾倒: pour_liquid(source_id, target_id, amount_ml)
+开合: open_container(target_id) / close_container(target_id)
+语音: speak(text, tone: neutral|warm|brief)
+等待: wait_for_signal(condition)
+
+[安全硬约束 — 不可违反]
+· 人员半径 1m 内禁止高速运动（>0.3m/s）
+· 刀具类操作仅限 role=adult 用户发起
+· SAFETY_STOP 信号优先于一切任务，立即停机
+· 禁止在无人监督时操作明火或高温设备
+
+[输出格式 — 严格遵守]
+输出纯 JSON 数组，不附加任何解释文字。
+每条 SubTask 结构：
+{
+  "task_id": string,
+  "type": "NAVIGATE|GRASP|PLACE|POUR|OPEN|SPEAK|WAIT",
+  "target_id": string,
+  "skill": string,
+  "params": object,
+  "preconditions": [string],
+  "effects": [string]
+}
+```
+
+---
+
+### Layer 2 · 场景上下文（本周期快照）
+
+```
+[scene]
+区域: 厨房+餐厅联通空间
+桌面: cup_01(陶瓷杯,空,桌面中央), phone_01(充电中,桌面右侧)
+灶台: kettle_01(电热水壶,有水约800ml,灶台左侧,handle朝右,水温约85°C)
+冰箱: fridge_01(关闭)
+人员: wiki(餐椅,面朝桌面,距机器人约1.8m)
+机器人当前位置: 灶台前40cm，面朝kettle_01
+```
+
+---
+
+### Layer 3 · 任务状态 + 失败记录（本周期）
+
+```
+[task]
+goal: 给 wiki 倒一杯热水
+completed:
+  - navigate_to(kettle_01) ✓
+pending:
+  - grasp(kettle_01) → pour(cup_01) → place(kettle_01) → speak
+
+[failures]
+- GRASP_FAILED: kettle_01 grasp_type=top ×2次失败
+  置信度0.21，顶部无可靠抓点
+  → 禁止再次使用 grasp_type=top
+  → handle 朝右，可尝试 grasp_type=hook
+
+[robot_state]
+position: 灶台前40cm  hand: empty
+```
+
+---
+
+### Layer 4 · 用户指令 + 社交上下文（实时）
+
+```
+[user]
+speaker: wiki  role: adult  priority: high
+instruction: "帮我倒杯水"  [22s前，无后续追加]
+
+[social_context]
+wiki坐姿放松，视线间歇看向机器人，无打扰风险，等待完成即可
+
+[preference_top5]
+- 水温偏好: 温热(70-80°C) [strength:high, source:explicit]
+- 倒水量: 约七分满 [strength:medium, source:observed]
+- 沟通风格: 简洁，完成后一句话告知 [strength:high]
+- 杯具偏好: 当前桌上的陶瓷杯 [strength:low, source:inferred]
+- 操作节奏: 不催促，安静完成 [strength:medium]
+```
+
+---
+
+### 规划器输出
+
+```json
+[
+  {
+    "task_id": "t_00124",
+    "type": "GRASP",
+    "target_id": "kettle_01",
+    "skill": "grasp_object",
+    "params": { "grasp_type": "hook" },
+    "preconditions": ["robot.near=kettle_01", "robot.hand=empty"],
+    "effects": ["robot.holding=kettle_01"]
+  },
+  {
+    "task_id": "t_00125",
+    "type": "POUR",
+    "target_id": "cup_01",
+    "skill": "pour_liquid",
+    "params": { "source_id": "kettle_01", "amount_ml": 210 },
+    "preconditions": ["robot.holding=kettle_01", "cup_01.filled=false"],
+    "effects": ["cup_01.filled=true", "cup_01.liquid=hot_water"]
+  },
+  {
+    "task_id": "t_00126",
+    "type": "PLACE",
+    "target_id": "kettle_01",
+    "skill": "place_object",
+    "params": { "location": "灶台左侧原位" },
+    "preconditions": ["robot.holding=kettle_01"],
+    "effects": ["robot.hand=empty", "kettle_01.location=灶台左侧"]
+  },
+  {
+    "task_id": "t_00127",
+    "type": "SPEAK",
+    "target_id": "wiki",
+    "skill": "speak",
+    "params": { "text": "水倒好了。", "tone": "brief" },
+    "preconditions": ["robot.hand=empty"],
+    "effects": ["task.notified=true"]
+  }
+]
+```
+
+**规划说明**：L3 识别到 `grasp_type=top` 的否定约束，结合场景信息（handle 朝右）切换为 `hook` 抓取。倒水量 210ml 对应七分满偏好。speak 选用 `brief` 语气匹配沟通风格偏好。
