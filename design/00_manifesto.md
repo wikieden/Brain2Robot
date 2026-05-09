@@ -1,5 +1,5 @@
 # Brain2Robot · 总纲
-**版本** v1.0 · 2026.04
+**版本** v1.1 · 2026.05
 
 > 如何把一个人蒸馏进机器人里。
 
@@ -47,7 +47,7 @@ L1 执行层  ~50 Hz  全身控制 · 力矩输出 · 实时驱动
 
 ## 整体架构
 
-![Brain2Robot 总体架构](./assets/fig1_brain2robot_overview.svg)
+![Brain2Robot 整体系统架构](./assets/fig10_system_overview.svg)
 
 ---
 
@@ -92,9 +92,9 @@ Brain2Robot
 | 文档 | 内容 | 状态 |
 |------|------|------|
 | [本文件](./00_manifesto.md) | 总纲·愿景·架构·导航 | ✅ |
-| [L3 认知层](./layers/L3_cognition.md) | 规划器·触发引擎·偏好接口·社交意图 | 🔨 进行中 |
-| [L2 协调层](./layers/L2_coordination.md) | BT调度·导航·技能执行·抓取 | 📋 待写 |
-| [L1 执行层](./layers/L1_execution.md) | 全身控制·实时驱动 | 📋 待写 |
+| [L3 认知层](./layers/L3_cognition.md) | 规划器·触发引擎·偏好接口·社交意图·否定性学习 | ✅ |
+| [L2 协调层](./layers/L2_coordination.md) | BT调度·符号世界模型·导航·技能执行·抓取·社交响应 | ✅ |
+| [L1 执行层](./layers/L1_execution.md) | MPC·全身控制·EtherCAT实时驱动·L1/L2接口契约 | ✅ |
 | [多人支持系统](./systems/multi_person_support.md) | 身份·偏好·冲突·触发 | ✅ |
 | [技艺结晶](./systems/techne_crystallization.md) | 人类技能蒸馏管道 | ✅ |
 
@@ -127,4 +127,4 @@ Brain2Robot
 
 ---
 
-*最后更新：2026.04*
+*最后更新：2026.05*

@@ -1,0 +1,297 @@
+<svg viewBox="0 0 1100 720" xmlns="http://www.w3.org/2000/svg" role="img" font-family="ui-monospace,'SF Mono',monospace">
+  <title>Brain2Robot 整体系统架构</title>
+  <desc>Brain2Robot完整系统：L3认知层、L2协调层、L1执行层、多人支持系统、技艺结晶管道、数据飞轮</desc>
+
+  <rect width="1100" height="720" fill="#0a0f1e" rx="10"/>
+  <text x="550" y="26" text-anchor="middle" font-size="15" font-weight="700" fill="#e2e8f0">Brain2Robot · 整体系统架构</text>
+  <text x="550" y="42" text-anchor="middle" font-size="10" fill="#475569">人类技能蒸馏 · 三层控制架构 · 多人偏好 · 数据飞轮</text>
+
+  <defs>
+    <marker id="s-blue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#2563eb"/></marker>
+    <marker id="s-green" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#16a34a"/></marker>
+    <marker id="s-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#dc2626"/></marker>
+    <marker id="s-amber" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#d97706"/></marker>
+    <marker id="s-cyan" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#0891b2"/></marker>
+    <marker id="s-purple" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#7c3aed"/></marker>
+    <marker id="s-pink" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#db2777"/></marker>
+    <marker id="s-teal" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#0d9488"/></marker>
+  </defs>
+
+  <!-- ═══ LEFT COLUMN: Multi-person Support + Techne ═══ -->
+
+  <!-- Multi-person Support System -->
+  <rect x="10" y="56" width="196" height="288" rx="7" fill="#0c1a2e" stroke="#1e40af" stroke-width="1.5"/>
+  <text x="108" y="74" text-anchor="middle" font-size="10" font-weight="700" fill="#60a5fa">多人支持系统</text>
+  <text x="108" y="87" text-anchor="middle" font-size="8.5" fill="#3b82f6">Multi-person Support</text>
+
+  <rect x="18" y="96" width="180" height="44" rx="4" fill="#071b3e" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="108" y="112" text-anchor="middle" font-size="9" font-weight="600" fill="#93c5fd">他者识别</text>
+  <text x="108" y="125" text-anchor="middle" font-size="8" fill="#64748b">Other-recognition · 人脸+声纹</text>
+  <text x="108" y="136" text-anchor="middle" font-size="7.5" fill="#475569">user_id → 权限 · 偏好</text>
+
+  <rect x="18" y="148" width="180" height="44" rx="4" fill="#071b3e" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="108" y="164" text-anchor="middle" font-size="9" font-weight="600" fill="#93c5fd">意向性引擎</text>
+  <text x="108" y="177" text-anchor="middle" font-size="8" fill="#64748b">Intentionality Engine</text>
+  <text x="108" y="188" text-anchor="middle" font-size="7.5" fill="#475569">偏好模型 Top-5 → L3</text>
+
+  <rect x="18" y="200" width="180" height="44" rx="4" fill="#071b3e" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="108" y="216" text-anchor="middle" font-size="9" font-weight="600" fill="#93c5fd">调和层</text>
+  <text x="108" y="229" text-anchor="middle" font-size="8" fill="#64748b">Dialectical Layer · 多人冲突</text>
+  <text x="108" y="240" text-anchor="middle" font-size="7.5" fill="#475569">优先级仲裁 → 统一任务目标</text>
+
+  <rect x="18" y="252" width="180" height="44" rx="4" fill="#071b3e" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="108" y="268" text-anchor="middle" font-size="9" font-weight="600" fill="#93c5fd">冲动发生器</text>
+  <text x="108" y="281" text-anchor="middle" font-size="8" fill="#64748b">Conative Engine · 主动触发</text>
+  <text x="108" y="292" text-anchor="middle" font-size="7.5" fill="#475569">5Hz规则 + 1Hz LLM裁断</text>
+
+  <!-- Techne Crystallization -->
+  <rect x="10" y="356" width="196" height="274" rx="7" fill="#0a1a0a" stroke="#15803d" stroke-width="1.5"/>
+  <text x="108" y="374" text-anchor="middle" font-size="10" font-weight="700" fill="#4ade80">技艺结晶管道</text>
+  <text x="108" y="387" text-anchor="middle" font-size="8.5" fill="#16a34a">Techne Crystallization</text>
+
+  <rect x="18" y="396" width="180" height="30" rx="3" fill="#021207" stroke="#14532d" stroke-width="1"/>
+  <text x="108" y="408" text-anchor="middle" font-size="8.5" fill="#86efac">① 演示采集</text>
+  <text x="108" y="420" text-anchor="middle" font-size="7.5" fill="#166534">VR手套 · 远程操控 · 视频</text>
+
+  <rect x="18" y="432" width="180" height="30" rx="3" fill="#021207" stroke="#14532d" stroke-width="1"/>
+  <text x="108" y="444" text-anchor="middle" font-size="8.5" fill="#86efac">② 轨迹分割</text>
+  <text x="108" y="456" text-anchor="middle" font-size="7.5" fill="#166534">Change-point 检测 · 子技能切割</text>
+
+  <rect x="18" y="468" width="180" height="30" rx="3" fill="#021207" stroke="#14532d" stroke-width="1"/>
+  <text x="108" y="480" text-anchor="middle" font-size="8.5" fill="#86efac">③ 语义标注</text>
+  <text x="108" y="492" text-anchor="middle" font-size="7.5" fill="#166534">VLM 自动标注 · 人工校验</text>
+
+  <rect x="18" y="504" width="180" height="30" rx="3" fill="#021207" stroke="#14532d" stroke-width="1"/>
+  <text x="108" y="516" text-anchor="middle" font-size="8.5" fill="#86efac">④ 双线蒸馏</text>
+  <text x="108" y="528" text-anchor="middle" font-size="7.5" fill="#166534">VLA LoRA + Diffusion Policy</text>
+
+  <rect x="18" y="540" width="180" height="30" rx="3" fill="#021207" stroke="#14532d" stroke-width="1"/>
+  <text x="108" y="552" text-anchor="middle" font-size="8.5" fill="#86efac">⑤ 技能注册</text>
+  <text x="108" y="564" text-anchor="middle" font-size="7.5" fill="#166534">skill_id → LoRA文件 → L2热加载</text>
+
+  <!-- Data Flywheel label -->
+  <rect x="18" y="580" width="180" height="36" rx="4" fill="#0d2d0d" stroke="#166534" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="108" y="594" text-anchor="middle" font-size="8.5" fill="#4ade80">数据飞轮</text>
+  <text x="108" y="607" text-anchor="middle" font-size="7.5" fill="#166534">部署失败 → 再采集 → 再蒸馏</text>
+
+  <!-- ═══ CENTER: Three Layers ═══ -->
+
+  <!-- L3 Cognition -->
+  <rect x="218" y="56" width="440" height="188" rx="7" fill="#0c1520" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="438" y="76" text-anchor="middle" font-size="12" font-weight="700" fill="#60a5fa">L3 认知层  ·  Cognition</text>
+  <text x="438" y="91" text-anchor="middle" font-size="9" fill="#3b82f6">~1Hz · LLM 驱动 · 任务规划 · 社交理解 · 主动触发</text>
+  <rect x="820" y="58" width="30" height="14" rx="3" fill="#1d4ed8"/>
+  <text x="835" y="68" text-anchor="middle" font-size="7.5" font-weight="700" fill="#bfdbfe">1Hz</text>
+
+  <rect x="226" y="100" width="104" height="68" rx="4" fill="#071228" stroke="#1e40af" stroke-width="1"/>
+  <text x="278" y="117" text-anchor="middle" font-size="9" font-weight="600" fill="#93c5fd">SubTask 规划器</text>
+  <text x="278" y="130" text-anchor="middle" font-size="7.5" fill="#475569">4层提示结构</text>
+  <text x="278" y="141" text-anchor="middle" font-size="7.5" fill="#475569">KV-cache ~300t</text>
+  <text x="278" y="153" text-anchor="middle" font-size="7.5" fill="#475569">否定约束注入</text>
+  <text x="278" y="165" text-anchor="middle" font-size="7.5" fill="#475569">→ SubTask[]</text>
+
+  <rect x="338" y="100" width="104" height="68" rx="4" fill="#071228" stroke="#1e40af" stroke-width="1"/>
+  <text x="390" y="117" text-anchor="middle" font-size="9" font-weight="600" fill="#93c5fd">冲动发生器</text>
+  <text x="390" y="130" text-anchor="middle" font-size="7.5" fill="#475569">Conative Engine</text>
+  <text x="390" y="141" text-anchor="middle" font-size="7.5" fill="#475569">规则层 5Hz</text>
+  <text x="390" y="153" text-anchor="middle" font-size="7.5" fill="#475569">LLM裁断 1Hz</text>
+  <text x="390" y="165" text-anchor="middle" font-size="7.5" fill="#475569">→ 任务目标</text>
+
+  <rect x="450" y="100" width="104" height="68" rx="4" fill="#071228" stroke="#1e40af" stroke-width="1"/>
+  <text x="502" y="117" text-anchor="middle" font-size="9" font-weight="600" fill="#93c5fd">现象层</text>
+  <text x="502" y="130" text-anchor="middle" font-size="7.5" fill="#475569">Phenomenal Layer</text>
+  <text x="502" y="141" text-anchor="middle" font-size="7.5" fill="#475569">表情+韵律+姿态</text>
+  <text x="502" y="153" text-anchor="middle" font-size="7.5" fill="#475569">+凝视 · 2Hz</text>
+  <text x="502" y="165" text-anchor="middle" font-size="7.5" fill="#475569">→ social_context</text>
+
+  <rect x="562" y="100" width="88" height="68" rx="4" fill="#071228" stroke="#1e40af" stroke-width="1"/>
+  <text x="606" y="117" text-anchor="middle" font-size="9" font-weight="600" fill="#93c5fd">否定性学习</text>
+  <text x="606" y="130" text-anchor="middle" font-size="7.5" fill="#475569">Negation-driven</text>
+  <text x="606" y="141" text-anchor="middle" font-size="7.5" fill="#475569">7种错误类型</text>
+  <text x="606" y="153" text-anchor="middle" font-size="7.5" fill="#475569">禁止约束传递</text>
+  <text x="606" y="165" text-anchor="middle" font-size="7.5" fill="#475569">→ 重规划</text>
+
+  <!-- L3 → L2 arrow -->
+  <line x1="438" y1="244" x2="438" y2="264" stroke="#2563eb" stroke-width="2" marker-end="url(#s-blue)"/>
+  <text x="446" y="257" font-size="8" fill="#2563eb">SubTask[]</text>
+
+  <!-- L2 Coordination -->
+  <rect x="218" y="266" width="440" height="194" rx="7" fill="#0d1a10" stroke="#15803d" stroke-width="2"/>
+  <text x="438" y="286" text-anchor="middle" font-size="12" font-weight="700" fill="#4ade80">L2 协调层  ·  Coordination</text>
+  <text x="438" y="301" text-anchor="middle" font-size="9" fill="#16a34a">~5Hz · BehaviorTree · 符号世界模型 · 执行与监控</text>
+  <rect x="820" y="268" width="30" height="14" rx="3" fill="#15803d"/>
+  <text x="835" y="278" text-anchor="middle" font-size="7.5" font-weight="700" fill="#bbf7d0">5Hz</text>
+
+  <rect x="226" y="310" width="96" height="68" rx="4" fill="#021207" stroke="#14532d" stroke-width="1"/>
+  <text x="274" y="327" text-anchor="middle" font-size="9" font-weight="600" fill="#86efac">BT 调度器</text>
+  <text x="274" y="340" text-anchor="middle" font-size="7.5" fill="#475569">前置条件检验</text>
+  <text x="274" y="351" text-anchor="middle" font-size="7.5" fill="#475569">符号世界模型</text>
+  <text x="274" y="362" text-anchor="middle" font-size="7.5" fill="#475569">effects 写入</text>
+  <text x="274" y="373" text-anchor="middle" font-size="7.5" fill="#ef4444">失败 → L3</text>
+
+  <rect x="330" y="310" width="96" height="68" rx="4" fill="#021207" stroke="#14532d" stroke-width="1"/>
+  <text x="378" y="327" text-anchor="middle" font-size="9" font-weight="600" fill="#86efac">VLN 导航</text>
+  <text x="378" y="340" text-anchor="middle" font-size="7.5" fill="#475569">NavMesh / VLN</text>
+  <text x="378" y="351" text-anchor="middle" font-size="7.5" fill="#475569">DWA/TEB避障</text>
+  <text x="378" y="362" text-anchor="middle" font-size="7.5" fill="#475569">→ 路径点(x,y,θ)</text>
+  <text x="378" y="373" text-anchor="middle" font-size="7.5" fill="#475569">→ L1底盘</text>
+
+  <rect x="434" y="310" width="96" height="68" rx="4" fill="#021207" stroke="#14532d" stroke-width="1"/>
+  <text x="482" y="327" text-anchor="middle" font-size="9" font-weight="600" fill="#86efac">技能执行器</text>
+  <text x="482" y="340" text-anchor="middle" font-size="7.5" fill="#475569">LoRA Hot/Warm</text>
+  <text x="482" y="351" text-anchor="middle" font-size="7.5" fill="#475569">π0.6 / RDT-1B</text>
+  <text x="482" y="362" text-anchor="middle" font-size="7.5" fill="#475569">→ 关节轨迹</text>
+  <text x="482" y="373" text-anchor="middle" font-size="7.5" fill="#475569">→ L1</text>
+
+  <rect x="538" y="310" width="112" height="68" rx="4" fill="#021207" stroke="#14532d" stroke-width="1"/>
+  <text x="594" y="327" text-anchor="middle" font-size="9" font-weight="600" fill="#86efac">抓取子系统</text>
+  <text x="594" y="340" text-anchor="middle" font-size="7.5" fill="#475569">AnyGrasp 10Hz</text>
+  <text x="594" y="351" text-anchor="middle" font-size="7.5" fill="#475569">Diffusion Policy</text>
+  <text x="594" y="362" text-anchor="middle" font-size="7.5" fill="#475569">接触前→接触时</text>
+  <text x="594" y="373" text-anchor="middle" font-size="7.5" fill="#475569">否定约束过滤</text>
+
+  <!-- Safety row -->
+  <rect x="226" y="388" width="424" height="26" rx="3" fill="#1a0505" stroke="#dc2626" stroke-width="1"/>
+  <text x="438" y="400" text-anchor="middle" font-size="8.5" font-weight="600" fill="#f87171">安全监控（并行）</text>
+  <text x="438" y="410" text-anchor="middle" font-size="7.5" fill="#b91c1c">碰撞检测 · 人员保护 · SAFETY_STOP → L1直通 · 异常上报L3</text>
+
+  <!-- L2 → L1 arrow -->
+  <line x1="438" y1="460" x2="438" y2="480" stroke="#16a34a" stroke-width="2" marker-end="url(#s-green)"/>
+  <text x="446" y="473" font-size="8" fill="#16a34a">轨迹/路径点</text>
+
+  <!-- L1 Execution -->
+  <rect x="218" y="482" width="440" height="162" rx="7" fill="#1a0a00" stroke="#ea580c" stroke-width="2"/>
+  <text x="438" y="502" text-anchor="middle" font-size="12" font-weight="700" fill="#fb923c">L1 执行层  ·  Execution</text>
+  <text x="438" y="517" text-anchor="middle" font-size="9" fill="#9a3412">1kHz · MPC · WBC/TSID · EtherCAT · 实时驱动</text>
+  <rect x="820" y="484" width="38" height="14" rx="3" fill="#ea580c"/>
+  <text x="839" y="494" text-anchor="middle" font-size="7.5" font-weight="700" fill="#fff7ed">1kHz</text>
+
+  <rect x="226" y="526" width="130" height="60" rx="4" fill="#130800" stroke="#c2410c" stroke-width="1"/>
+  <text x="291" y="543" text-anchor="middle" font-size="9" font-weight="600" fill="#fdba74">轨迹优化 MPC</text>
+  <text x="291" y="556" text-anchor="middle" font-size="7.5" fill="#475569">ProxDDP · ~50Hz</text>
+  <text x="291" y="567" text-anchor="middle" font-size="7.5" fill="#475569">预测窗口500ms</text>
+  <text x="291" y="578" text-anchor="middle" font-size="7.5" fill="#475569">关节目标序列</text>
+
+  <rect x="364" y="526" width="130" height="60" rx="4" fill="#130800" stroke="#c2410c" stroke-width="1"/>
+  <text x="429" y="543" text-anchor="middle" font-size="9" font-weight="600" fill="#fdba74">全身控制 WBC</text>
+  <text x="429" y="556" text-anchor="middle" font-size="7.5" fill="#475569">TSID · Pinocchio</text>
+  <text x="429" y="567" text-anchor="middle" font-size="7.5" fill="#475569">P1平衡&gt;P2安全</text>
+  <text x="429" y="578" text-anchor="middle" font-size="7.5" fill="#475569">&gt;P3轨迹&gt;P4姿态</text>
+
+  <rect x="502" y="526" width="148" height="60" rx="4" fill="#130800" stroke="#c2410c" stroke-width="1"/>
+  <text x="576" y="543" text-anchor="middle" font-size="9" font-weight="600" fill="#fdba74">EtherCAT 驱动</text>
+  <text x="576" y="556" text-anchor="middle" font-size="7.5" fill="#475569">PREEMPT_RT · 1kHz</text>
+  <text x="576" y="567" text-anchor="middle" font-size="7.5" fill="#475569">ODrive Pro / VESC 6</text>
+  <text x="576" y="578" text-anchor="middle" font-size="7.5" fill="#475569">抖动 &lt;100μs</text>
+
+  <!-- Sensor feedback up arrow -->
+  <path d="M226,582 L218,582 L218,468 L220,468" fill="none" stroke="#0891b2" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#s-cyan)"/>
+  <text x="202" y="530" font-size="8" fill="#0891b2" transform="rotate(-90,202,530)">传感器反馈</text>
+
+  <!-- ═══ RIGHT COLUMN: Human + Robot ═══ -->
+
+  <!-- Human & Environment -->
+  <rect x="672" y="56" width="176" height="148" rx="7" fill="#12001a" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="760" y="74" text-anchor="middle" font-size="10" font-weight="700" fill="#c084fc">人类 · 环境</text>
+
+  <rect x="680" y="84" width="160" height="28" rx="3" fill="#1e0030" stroke="#6d28d9" stroke-width="1"/>
+  <text x="760" y="97" text-anchor="middle" font-size="8.5" fill="#e9d5ff">视觉  RealSense D435i × 3</text>
+  <text x="760" y="109" text-anchor="middle" font-size="7.5" fill="#7c3aed">RGB-D · 点云 · 深度</text>
+
+  <rect x="680" y="118" width="160" height="28" rx="3" fill="#1e0030" stroke="#6d28d9" stroke-width="1"/>
+  <text x="760" y="131" text-anchor="middle" font-size="8.5" fill="#e9d5ff">语音  麦克风阵列</text>
+  <text x="760" y="143" text-anchor="middle" font-size="7.5" fill="#7c3aed">ASR + 声纹识别</text>
+
+  <rect x="680" y="152" width="160" height="28" rx="3" fill="#1e0030" stroke="#6d28d9" stroke-width="1"/>
+  <text x="760" y="165" text-anchor="middle" font-size="8.5" fill="#e9d5ff">社交信号  表情+姿态</text>
+  <text x="760" y="177" text-anchor="middle" font-size="7.5" fill="#7c3aed">→ 现象层 2Hz</text>
+
+  <!-- Robot Body -->
+  <rect x="672" y="218" width="176" height="148" rx="7" fill="#0a1400" stroke="#65a30d" stroke-width="1.5"/>
+  <text x="760" y="236" text-anchor="middle" font-size="10" font-weight="700" fill="#a3e635">机器人本体</text>
+
+  <rect x="680" y="246" width="160" height="28" rx="3" fill="#0d1a00" stroke="#4d7c0f" stroke-width="1"/>
+  <text x="760" y="259" text-anchor="middle" font-size="8.5" fill="#d9f99d">双臂 + 双足 + 底盘</text>
+  <text x="760" y="271" text-anchor="middle" font-size="7.5" fill="#4d7c0f">~30 DoF · EtherCAT</text>
+
+  <rect x="680" y="280" width="160" height="28" rx="3" fill="#0d1a00" stroke="#4d7c0f" stroke-width="1"/>
+  <text x="760" y="293" text-anchor="middle" font-size="8.5" fill="#d9f99d">腕部 F/T 传感器</text>
+  <text x="760" y="305" text-anchor="middle" font-size="7.5" fill="#4d7c0f">6-DoF · 接触检测</text>
+
+  <rect x="680" y="314" width="160" height="28" rx="3" fill="#0d1a00" stroke="#4d7c0f" stroke-width="1"/>
+  <text x="760" y="327" text-anchor="middle" font-size="8.5" fill="#d9f99d">表情屏 + TTS 扬声器</text>
+  <text x="760" y="339" text-anchor="middle" font-size="7.5" fill="#4d7c0f">社交响应输出</text>
+
+  <!-- Jetson Thor -->
+  <rect x="672" y="380" width="176" height="116" rx="7" fill="#111827" stroke="#374151" stroke-width="1.5"/>
+  <text x="760" y="398" text-anchor="middle" font-size="10" font-weight="700" fill="#9ca3af">Jetson Thor</text>
+  <text x="760" y="412" text-anchor="middle" font-size="8.5" fill="#6b7280">275 TOPS · JetPack 7.0</text>
+  <rect x="680" y="420" width="160" height="18" rx="2" fill="#1f2937" stroke="#374151" stroke-width="1"/>
+  <text x="760" y="432" text-anchor="middle" font-size="7.5" fill="#6b7280">GPU: MPC · VLA 推理 · KV-cache</text>
+  <rect x="680" y="442" width="160" height="18" rx="2" fill="#1f2937" stroke="#374151" stroke-width="1"/>
+  <text x="760" y="454" text-anchor="middle" font-size="7.5" fill="#6b7280">CPU实时核: WBC / BT / EtherCAT</text>
+  <rect x="680" y="464" width="160" height="18" rx="2" fill="#1f2937" stroke="#374151" stroke-width="1"/>
+  <text x="760" y="476" text-anchor="middle" font-size="7.5" fill="#6b7280">PREEMPT_RT · SHM层间通信</text>
+
+  <!-- Scene Understanding -->
+  <rect x="672" y="510" width="176" height="76" rx="7" fill="#001a1f" stroke="#0e7490" stroke-width="1.5"/>
+  <text x="760" y="528" text-anchor="middle" font-size="10" font-weight="700" fill="#22d3ee">场景理解</text>
+  <rect x="680" y="536" width="160" height="18" rx="2" fill="#001519" stroke="#0e7490" stroke-width="1"/>
+  <text x="760" y="548" text-anchor="middle" font-size="7.5" fill="#67e8f9">ConceptGraphs 场景图</text>
+  <rect x="680" y="558" width="160" height="22" rx="2" fill="#001519" stroke="#0e7490" stroke-width="1"/>
+  <text x="760" y="568" text-anchor="middle" font-size="7.5" fill="#67e8f9">OWL-ViT开放词汇检测</text>
+  <text x="760" y="578" text-anchor="middle" font-size="7.5" fill="#164e63">→ VLN导航 · L3场景上下文</text>
+
+  <!-- Data Flywheel bottom -->
+  <rect x="218" y="660" width="440" height="46" rx="6" fill="#0a1a0a" stroke="#15803d" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="438" y="678" text-anchor="middle" font-size="10" font-weight="700" fill="#4ade80">数据飞轮</text>
+  <text x="438" y="694" text-anchor="middle" font-size="8.5" fill="#16a34a">部署失败 → 问题轨迹采集 → Techne结晶再蒸馏 → LoRA更新注入L2 → 部署改善</text>
+
+  <!-- ═══ ARROWS ═══ -->
+
+  <!-- Human → L3 (perception in) -->
+  <line x1="672" y1="120" x2="660" y2="120" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#s-purple)"/>
+  <!-- Social signals → Phenomenal Layer -->
+  <line x1="672" y1="168" x2="660" y2="168" stroke="#7c3aed" stroke-width="1.2" marker-end="url(#s-purple)"/>
+
+  <!-- Multi-person → L3 (preference) -->
+  <line x1="206" y1="280" x2="216" y2="200" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="4,2" marker-end="url(#s-blue)"/>
+
+  <!-- Techne → L2 skill injection -->
+  <line x1="206" y1="564" x2="216" y2="450" stroke="#16a34a" stroke-width="1.2" stroke-dasharray="4,2" marker-end="url(#s-green)"/>
+
+  <!-- L3 failure → L3 (self-loop via Negation) -->
+  <path d="M274,388 L274,430 L218,430 L218,180 L220,180" fill="none" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="4,2" marker-end="url(#s-red)"/>
+
+  <!-- L2 → L1 execution (already drawn) -->
+
+  <!-- L1 → Robot body -->
+  <line x1="660" y1="560" x2="672" y2="320" stroke="#ea580c" stroke-width="1.5" marker-end="url(#s-amber)"/>
+
+  <!-- Robot sensors → L1 feedback -->
+  <line x1="672" y1="293" x2="662" y2="560" stroke="#0891b2" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#s-cyan)"/>
+
+  <!-- Scene Understanding → L3 -->
+  <line x1="760" y1="510" x2="700" y2="210" stroke="#0891b2" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#s-cyan)"/>
+
+  <!-- Flywheel → Techne -->
+  <path d="M218,683 L108,683 L108,630" fill="none" stroke="#16a34a" stroke-width="1.2" stroke-dasharray="4,2" marker-end="url(#s-green)"/>
+
+  <!-- L2 → Flywheel (failures) -->
+  <path d="M438,660 L438,656" fill="none" stroke="#16a34a" stroke-width="1.5" marker-end="url(#s-green)"/>
+
+  <!-- Jetson label connection lines (decorative) -->
+  <line x1="672" y1="438" x2="658" y2="438" stroke="#374151" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- Legend -->
+  <rect x="10" y="648" width="196" height="62" rx="5" fill="#0a0f1e" stroke="#1e293b" stroke-width="1"/>
+  <text x="108" y="663" text-anchor="middle" font-size="9" font-weight="600" fill="#94a3b8">图例</text>
+  <line x1="20" y1="674" x2="50" y2="674" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="56" y="678" font-size="8" fill="#94a3b8">主控制流</text>
+  <line x1="20" y1="688" x2="50" y2="688" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <text x="56" y="692" font-size="8" fill="#94a3b8">失败/错误上报</text>
+  <line x1="110" y1="674" x2="140" y2="674" stroke="#0891b2" stroke-width="1.2" stroke-dasharray="3,2"/>
+  <text x="146" y="678" font-size="8" fill="#94a3b8">传感器反馈</text>
+  <line x1="110" y1="688" x2="140" y2="688" stroke="#16a34a" stroke-width="1.2" stroke-dasharray="4,2"/>
+  <text x="146" y="692" font-size="8" fill="#94a3b8">技能注入</text>
+</svg>
